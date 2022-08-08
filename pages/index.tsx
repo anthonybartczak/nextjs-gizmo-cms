@@ -1,8 +1,22 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { gql, useQuery } from "@apollo/client";
+
+const queryPlaceNames = gql`
+  query Posts {
+    posts(where: { categoryName: "Lokale" }) {
+      nodes {
+        title
+      }
+    }
+  }
+`;
 
 const Home: NextPage = () => {
+  const { data, loading, error } = useQuery(queryPlaceNames);
+  console.log(data);
+
   return (
     <div>
       <Head>
