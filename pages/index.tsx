@@ -3,6 +3,29 @@ import Head from "next/head";
 import Link from "next/link";
 import { gql, useQuery } from "@apollo/client";
 
+const buttonItems = [
+  {
+    label: "O nas",
+    href: "/o-nas",
+  },
+  {
+    label: "Artyści",
+    href: "/artysci",
+  },
+  {
+    label: "Lokale",
+    href: "/lokale",
+  },
+  {
+    label: "Wydarzenia",
+    href: "/wydarzenia",
+  },
+  {
+    label: "Kontakt",
+    href: "/kontakt",
+  },
+];
+
 const queryPlaceNames = gql`
   query Posts {
     posts(where: { categoryName: "Lokale" }) {
@@ -26,8 +49,16 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <div>
-          <div className="flex center">
-            <h1>Gizmo Management</h1>
+          <div className="flex justify-center items-center h-screen">
+            <div className="">
+              {buttonItems.map((item) => (
+                <Link key={item.label} href={item.href} passHref>
+                  <button className="main-logo-btn" type="button">
+                    <i className="fas fa-heart"></i> {item.label}
+                  </button>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </main>
