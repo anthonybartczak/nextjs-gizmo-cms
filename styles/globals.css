@@ -5,7 +5,7 @@
   @apply border border-black
   hover:text-white hover:border-white hover:bg-black hover:rounded-md
   font-bold uppercase
-  px-2 py-2 rounded
+  px-2 py-2 rounded-md
   outline-none focus:outline-none
   mx-2 mb-1
   ease-linear transition-all duration-150
