@@ -6,7 +6,10 @@ const nextConfig = {
     }
     return config;
   },
+  images: {
+    domains: ["assets.example.com", "placeimg.com"],
+  },
   reactStrictMode: true,
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

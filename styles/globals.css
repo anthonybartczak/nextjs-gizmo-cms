@@ -3,11 +3,22 @@
 
 .main-logo-btn {
   @apply border border-black
-  hover:text-white hover:border-white hover:bg-black hover:rounded-md
+  hover:text-white hover:border-white hover:bg-black
   font-bold uppercase
-  px-2 py-2 rounded-md
+  px-2 py-2
   outline-none focus:outline-none
   mx-2 mb-1
+  ease-linear transition-all duration-150
+  w-40;
+}
+
+.main-contact-btn {
+  @apply border border-black
+  hover:text-white hover:border-white hover:bg-black
+  font-bold uppercase
+  px-2 py-2
+  mr-4
+  outline-none focus:outline-none
   ease-linear transition-all duration-150
   w-40;
 }
