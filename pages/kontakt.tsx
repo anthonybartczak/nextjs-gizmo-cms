@@ -1,7 +1,5 @@
 import Head from "next/head";
 import { useState } from "react";
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
 
 function Contact() {
   const [firstName, setFirstName] = useState("");
@@ -44,7 +42,6 @@ function Contact() {
 
   return (
     <>
-      <Navbar />
       <div className="relative mt-12 mb-8">
         <div className="animate-tilt absolute -inset-0.5 mx-4 rounded-lg bg-gradient-to-r from-teal-300 via-blue-400 to-purple-400 opacity-75 blur filter transition duration-1000 group-hover:opacity-100 group-hover:duration-200 xl:mx-80"></div>
         <form className="relative mx-4 mt-5 rounded-2xl bg-white px-8 pt-8 pb-1 shadow-2xl dark:bg-gray-800 md:col-span-8 xl:mx-80">
@@ -144,7 +141,6 @@ function Contact() {
           </div>
         </form>
       </div>
-      <Footer />
     </>
   );
 }
