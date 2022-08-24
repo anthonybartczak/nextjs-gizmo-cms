@@ -4,7 +4,7 @@ import Image from "next/image";
 const buttonItems = [
   {
     label: "O nas",
-    href: "/o-nas",
+    href: "/",
   },
   {
     label: "Artyści",

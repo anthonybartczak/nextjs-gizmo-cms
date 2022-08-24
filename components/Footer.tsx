@@ -4,7 +4,7 @@ import Link from "next/link";
 const buttonItems = [
   {
     label: "O nas",
-    href: "",
+    href: "/",
   },
   {
     label: "Artyści",

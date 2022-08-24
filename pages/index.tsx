@@ -6,10 +6,11 @@ import { Hero } from "../components/Hero";
 import { Navbar } from "../components/Navbar";
 import { Drawer } from "../components/Drawer";
 import { Footer } from "../components/Footer";
+import { Featured } from "../components/Featured";
 
 const queryPlaceNames = gql`
   query Posts {
-    posts(where: { categoryName: "Lokale" }) {
+    posts(where: { categoryName: "Artyści" }) {
       nodes {
         title
       }
@@ -18,9 +19,6 @@ const queryPlaceNames = gql`
 `;
 
 const Home: NextPage = () => {
-  // const { data, loading, error } = useQuery(queryPlaceNames);
-  // console.log(data);
-
   return (
     <>
       <Head>
@@ -30,10 +28,11 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <div className="drawer">
-          <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+          <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="flex flex-col drawer-content">
             <Navbar />
             <Hero />
+            <Featured />
             <Footer />
           </div>
           <Drawer />
