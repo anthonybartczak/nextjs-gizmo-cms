@@ -40,15 +40,15 @@ export const Navbar = () => (
           </svg>
         </label>
       </div>
-      <div className="flex-1 px-2 mx-2">Navbar Title</div>
       <div className="flex-none hidden lg:block">
         <ul className="menu menu-horizontal">
-          <li>
-            <a>Navbar Item 1</a>
-          </li>
-          <li>
-            <a>Navbar Item 2</a>
-          </li>
+          {buttonItems.map((item) => (
+            <li key={item.label}>
+              <Link href={item.href} passHref>
+                <a className="uppercase">{item.label}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

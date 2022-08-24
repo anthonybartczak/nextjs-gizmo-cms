@@ -5,25 +5,7 @@ import { gql, useQuery } from "@apollo/client";
 import { Hero } from "../components/Hero";
 import { Navbar } from "../components/Navbar";
 import { Drawer } from "../components/Drawer";
-
-const buttonItems = [
-  {
-    label: "O nas",
-    href: "/o-nas",
-  },
-  {
-    label: "Artyści",
-    href: "/artysci",
-  },
-  {
-    label: "Lokale",
-    href: "/lokale",
-  },
-  {
-    label: "Wydarzenia",
-    href: "/wydarzenia",
-  },
-];
+import { Footer } from "../components/Footer";
 
 const queryPlaceNames = gql`
   query Posts {
@@ -51,20 +33,8 @@ const Home: NextPage = () => {
           <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
           <div className="flex flex-col drawer-content">
             <Navbar />
-            <div className="">
-              <div className="flex flex-col justify-center items-center">
-                <Hero />
-                {/* <div className="">
-              {buttonItems.map((item) => (
-                <Link key={item.label} href={item.href} passHref>
-                  <button className="main-logo-btn" type="button">
-                    <i className="fas fa-heart"></i> {item.label}
-                  </button>
-                </Link>
-              ))}
-            </div> */}
-              </div>
-            </div>
+            <Hero />
+            <Footer />
           </div>
           <Drawer />
         </div>

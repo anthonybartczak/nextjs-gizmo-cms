@@ -2,13 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const Hero = () => (
-  <div className="hero bg-base-200">
+  <div className="hero bg-base-200 h-full">
     <div className="hero-content flex-col lg:flex-row relative">
       <Image
         alt=""
         layout="intrinsic"
-        width={400}
-        height={400}
+        width={520}
+        height={500}
         src="/hero-picture.webp"
         className="rounded-lg shadow-2xl"
       />
