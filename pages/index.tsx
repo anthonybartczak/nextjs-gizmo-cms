@@ -10,7 +10,11 @@ import { Featured } from "../components/Featured";
 
 const queryPlaceNames = gql`
   query Posts {
-    posts(where: { categoryName: "Artyści" }) {
+    posts(
+      where: {
+        and: [{ categoryName: "Artyści" }, { categoryName: "Promowane" }]
+      }
+    ) {
       nodes {
         title
       }

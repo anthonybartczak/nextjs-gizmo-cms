@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 
+.navbar {
+  min-height: 3rem;
+}
+
 .main-logo-btn {
   @apply border border-black
   hover:text-white hover:border-white hover:bg-black
@@ -22,9 +26,8 @@
 }
 
 .main-contact-btn {
-  @apply border border-black
-  hover:text-white hover:border-white hover:bg-black
-  font-bold uppercase
+  @apply bg-gray-800 border border-gray-800 hover:bg-gray-600
+  font-bold text-gray-100 uppercase rounded-md
   px-2 py-2
   mr-4
   outline-none focus:outline-none
@@ -33,13 +36,13 @@
 }
 
 .main-card-btn {
-  @apply border border-black bg-white text-black text-sm
-  hover:text-white hover:bg-black
+  @apply text-sm
+ text-white bg-gray-800 rounded-md hover:bg-gray-600
   px-1 py-1
   mr-4
   outline-none focus:outline-none
   ease-linear transition-all duration-150
-  w-24;
+  w-20 h-8;
 }
 
 @tailwind utilities;

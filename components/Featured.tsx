@@ -4,7 +4,7 @@ import { gql, useQuery } from "@apollo/client";
 
 const queryArtistCard = gql`
   query Posts {
-    posts(where: { categoryName: "Artyści" }, first: 3) {
+    posts(where: { categoryName: "Artyści", tag: "Promowany" }, first: 3) {
       nodes {
         id
         title
@@ -41,15 +41,15 @@ export const Featured = () => {
                 />
               </figure>
               <div className="card-body">
-                <h2 className="text-white card-title">{item.title}</h2>
+                <h2 className="text-gray-100 card-title">{item.title}</h2>
                 <p
-                  className="text-white"
+                  className="text-gray-200"
                   dangerouslySetInnerHTML={{
                     __html: item.excerpt ?? {},
                   }}
                 />
                 <div className="card-actions justify-end">
-                  <button className="main-card-btn">więcej...</button>
+                  <button className="main-card-btn">więcej</button>
                 </div>
               </div>
             </div>

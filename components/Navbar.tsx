@@ -22,7 +22,7 @@ const buttonItems = [
 
 export const Navbar = () => (
   <>
-    <div className="w-full navbar bg-gray-900 justify-center">
+    <div className="navbar bg-gray-800 justify-center sticky top-0 z-50">
       <div className="flex-none lg:hidden">
         <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
           <svg

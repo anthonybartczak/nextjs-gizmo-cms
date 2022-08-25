@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FaInstagramSquare, FaFacebookSquare } from "react-icons/fa";
 
 export const Hero = () => (
-  <div className="hero bg-gray-100">
+  <div className="hero bg-gray-100 pt-8">
     <div className="hero-content flex-col lg:flex-row items-justify-center">
       <Image
         alt=""
@@ -24,10 +25,32 @@ export const Hero = () => (
           diam ut bibendum fringilla. Aliquam ac blandit sem. Nullam nisl massa,
           interdum at sollicitudin at, vestibulum at odio.
         </p>
-        <div className="">
+        <div className="flex">
           <Link href="/kontakt" passHref>
             <button className="main-contact-btn">kontakt</button>
           </Link>
+          <div className="grid grid-flow-col gap-4">
+            <a
+              href="https://www.facebook.com/agencjagizmo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagramSquare
+                target="_blank"
+                className="w-10 h-10 hover:text-gray-600 ease-linear transition-all duration-150"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/agencjagizmo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookSquare
+                target="_blank"
+                className="w-10 h-10 hover:text-gray-600 ease-linear transition-all duration-150"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>
