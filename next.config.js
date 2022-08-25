@@ -7,7 +7,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ["assets.example.com", "placeimg.com"],
+    domains: ["assets.example.com", "placeimg.com", "gizmo.com.pl"],
   },
   reactStrictMode: true,
 };

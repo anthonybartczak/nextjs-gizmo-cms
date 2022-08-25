@@ -3,30 +3,54 @@ import Image from "next/image";
 import { gql, useQuery } from "@apollo/client";
 
 const queryArtistCard = gql`
-  query Posts (limit: 2){
-    posts(where: { categoryName: "Artyści" }) {
+  query Posts {
+    posts(where: { categoryName: "Artyści" }, first: 3) {
       nodes {
+        id
         title
+        excerpt
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
       }
     }
   }
 `;
 
-export const Featured = () => (
-  <>
-    <div className="">
-      <div className="card w-96 bg-base-100 shadow-xl image-full">
-        <figure>
-          <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+export const Featured = () => {
+  const { data, loading, error } = useQuery(queryArtistCard);
+  console.log(data);
+
+  if (loading) return null;
+
+  return (
+    <>
+      <div className="">
+        {data.posts.nodes.map((item: any) => (
+          <div
+            key={item.id}
+            className="card w-96 bg-base-100 shadow-xl image-full"
+          >
+            <figure>
+              <Image
+                src={item.featuredImage.node.mediaItemUrl}
+                width={400}
+                height={400}
+                alt="Artists thumbnail image"
+              />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{item.title}</h2>
+              <p className="">{item.excerpt}</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
