@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const Hero = () => (
-  <div className="hero bg-base-200 h-full">
+  <div className="hero bg-gray-100">
     <div className="hero-content flex-col lg:flex-row">
       <Image
         alt=""

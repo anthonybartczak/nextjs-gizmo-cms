@@ -26,7 +26,7 @@ const buttonItems = [
 
 export const Footer = () => (
   <>
-    <footer className="footer footer-center pt-14 pb-8 bg-base-200 text-base-content rounded">
+    <footer className="footer footer-center pt-14 pb-8 bg-gray-100 text-base-content rounded">
       <div className="grid grid-flow-col gap-4">
         {buttonItems.map((item) => (
           <Link href={item.href} key={item.label}>
