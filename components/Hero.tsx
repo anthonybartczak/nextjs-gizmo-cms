@@ -37,7 +37,7 @@ export const Hero = () => (
             >
               <FaInstagramSquare
                 target="_blank"
-                className="w-10 h-10 hover:text-gray-600 ease-linear transition-all duration-150"
+                className="w-10 h-10 hover:text-gray-600 text-gray-800 ease-linear transition-all duration-150"
               />
             </a>
             <a
@@ -47,7 +47,7 @@ export const Hero = () => (
             >
               <FaFacebookSquare
                 target="_blank"
-                className="w-10 h-10 hover:text-gray-600 ease-linear transition-all duration-150"
+                className="w-10 h-10 hover:text-gray-600 text-gray-800 ease-linear transition-all duration-150"
               />
             </a>
           </div>
