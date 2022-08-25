@@ -27,29 +27,36 @@ export const Featured = () => {
 
   return (
     <>
-      <div className="">
-        {data.posts.nodes.map((item: any) => (
-          <div
-            key={item.id}
-            className="card w-96 bg-base-100 shadow-xl image-full"
-          >
-            <figure>
-              <Image
-                src={item.featuredImage.node.mediaItemUrl}
-                width={400}
-                height={400}
-                alt="Artists thumbnail image"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{item.title}</h2>
-              <p className="">{item.excerpt}</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
+      <div className="flex flex-col bg-base-200 items-center pt-12">
+        <h1 className="text-5xl font-bold pt-12">Nasi artyści</h1>
+        <div className="grid grid-flow-row xl:grid-cols-3 justify-items-center xl:grid-flow-cols gap-10 xl:gap-20  pt-10">
+          {data.posts.nodes.map((item: any) => (
+            <div
+              key={item.id}
+              className="card w-96 bg-base-100 shadow-xl image-full"
+            >
+              <figure>
+                <Image
+                  src={item.featuredImage.node.mediaItemUrl}
+                  width={400}
+                  height={400}
+                  alt="Artists thumbnail image"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{item.title}</h2>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: item.excerpt ?? {},
+                  }}
+                />
+                <div className="card-actions justify-end">
+                  <button className="main-card-btn">więcej...</button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );

@@ -23,6 +23,16 @@
   w-40;
 }
 
+.main-card-btn {
+  @apply border border-black bg-white text-black text-sm
+  hover:text-white hover:bg-black
+  px-1 py-1
+  mr-4
+  outline-none focus:outline-none
+  ease-linear transition-all duration-150
+  w-24;
+}
+
 @tailwind utilities;
 
 @layer base {

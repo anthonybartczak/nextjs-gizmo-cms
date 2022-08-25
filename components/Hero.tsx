@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Hero = () => (
   <div className="hero bg-base-200 h-full">
-    <div className="hero-content flex-col lg:flex-row relative">
+    <div className="hero-content flex-col lg:flex-row">
       <Image
         alt=""
         layout="intrinsic"
