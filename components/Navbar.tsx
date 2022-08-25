@@ -22,14 +22,14 @@ const buttonItems = [
 
 export const Navbar = () => (
   <>
-    <div className="w-full navbar bg-base-300">
+    <div className="w-full navbar bg-gray-900 justify-center">
       <div className="flex-none lg:hidden">
         <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            className="inline-block w-6 h-6 stroke-current"
+            className="inline-block w-6 h-6 stroke-gray-100"
           >
             <path
               strokeLinecap="round"
@@ -43,9 +43,9 @@ export const Navbar = () => (
       <div className="flex-none hidden lg:block">
         <ul className="menu menu-horizontal">
           {buttonItems.map((item) => (
-            <li key={item.label}>
+            <li className="" key={item.label}>
               <Link href={item.href} passHref>
-                <a className="uppercase">{item.label}</a>
+                <button className="full-nav-btn">{item.label}</button>
               </Link>
             </li>
           ))}

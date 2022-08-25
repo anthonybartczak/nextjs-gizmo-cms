@@ -28,8 +28,8 @@ export const Featured = () => {
   return (
     <>
       <div className="flex flex-col bg-gray-100 items-center pt-12">
-        <h1 className="text-5xl font-bold pt-12">Nasi artyści</h1>
-        <div className="grid grid-flow-row xl:grid-cols-3 justify-items-center xl:grid-flow-cols gap-10 xl:gap-20  pt-10">
+        <h1 className="text-black text-5xl font-bold pt-12">Nasi artyści</h1>
+        <div className="grid grid-flow-row xl:grid-cols-3 justify-items-center xl:grid-flow-cols gap-10 xl:gap-20 pt-10">
           {data.posts.nodes.map((item: any) => (
             <div key={item.id} className="card w-96 shadow-xl image-full">
               <figure>
@@ -41,8 +41,9 @@ export const Featured = () => {
                 />
               </figure>
               <div className="card-body">
-                <h2 className="card-title">{item.title}</h2>
+                <h2 className="text-white card-title">{item.title}</h2>
                 <p
+                  className="text-white"
                   dangerouslySetInnerHTML={{
                     __html: item.excerpt ?? {},
                   }}

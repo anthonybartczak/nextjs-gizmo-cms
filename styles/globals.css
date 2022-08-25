@@ -12,6 +12,15 @@
   w-40;
 }
 
+.full-nav-btn {
+  @apply hover:text-rose-600 hover:border-white
+  uppercase text-sm font-bold text-gray-300
+  px-6
+  outline-none focus:outline-none
+  mx-2
+  ease-linear transition-all duration-150;
+}
+
 .main-contact-btn {
   @apply border border-black
   hover:text-white hover:border-white hover:bg-black

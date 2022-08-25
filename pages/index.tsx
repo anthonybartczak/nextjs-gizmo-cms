@@ -28,7 +28,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <div className="drawer">
-          <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+          <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
           <div className="flex flex-col drawer-content">
             <Navbar />
             <Hero />

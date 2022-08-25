@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Hero = () => (
   <div className="hero bg-gray-100">
-    <div className="hero-content flex-col lg:flex-row">
+    <div className="hero-content flex-col lg:flex-row items-justify-center">
       <Image
         alt=""
         layout="intrinsic"
@@ -12,10 +12,10 @@ export const Hero = () => (
         src="/hero-picture.webp"
         className="rounded-lg shadow-2xl"
       />
-      <div>
-        <h1 className="text-5xl font-bold">Management zrobiony </h1>
+      <div className="">
+        <h1 className="text-black text-5xl font-bold">Management zrobiony </h1>
         <h1 className="text-5xl font-bold text-rose-600">dobrze.</h1>
-        <p className="py-5 max-w-2xl">
+        <p className="text-black py-5 max-w-2xl">
           Fusce sed lacus ut dolor consequat euismod. Quisque non eros mollis,
           condimentum purus vitae, bibendum quam. In urna leo, facilisis quis
           ipsum quis, finibus viverra massa. Maecenas mi neque, bibendum non
@@ -26,7 +26,7 @@ export const Hero = () => (
         </p>
         <div className="">
           <Link href="/kontakt" passHref>
-            <button className="main-contact-btn">KONTAKT</button>
+            <button className="main-contact-btn">kontakt</button>
           </Link>
         </div>
       </div>
