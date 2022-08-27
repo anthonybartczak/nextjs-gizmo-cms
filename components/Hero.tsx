@@ -31,7 +31,7 @@ export const Hero = () => (
           </Link>
           <div className="grid grid-flow-col gap-4">
             <a
-              href="https://www.facebook.com/agencjagizmo"
+              href="https://www.instagram.com/agencjagizmo/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -41,7 +41,7 @@ export const Hero = () => (
               />
             </a>
             <a
-              href="https://www.instagram.com/agencjagizmo/"
+              href="https://www.facebook.com/agencjagizmo"
               target="_blank"
               rel="noopener noreferrer"
             >

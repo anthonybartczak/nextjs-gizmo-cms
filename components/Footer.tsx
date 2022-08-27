@@ -37,14 +37,14 @@ export const Footer = () => (
       <div>
         <div className="grid grid-flow-col gap-4">
           <a
-            href="https://www.facebook.com/agencjagizmo"
+            href="https://www.instagram.com/agencjagizmo/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaInstagramSquare className="w-6 h-6" />
           </a>
           <a
-            href="https://www.instagram.com/agencjagizmo/"
+            href="https://www.facebook.com/agencjagizmo"
             target="_blank"
             rel="noopener noreferrer"
           >

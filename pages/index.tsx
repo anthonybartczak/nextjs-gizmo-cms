@@ -1,28 +1,15 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { gql, useQuery } from "@apollo/client";
 import { Hero } from "../components/Hero";
 import { Navbar } from "../components/Navbar";
 import { Drawer } from "../components/Drawer";
 import { Footer } from "../components/Footer";
-import { Featured } from "../components/Featured";
+import Featured from "../components/Featured";
+import client from "../lib/apollo";
+import { gql } from "@apollo/client";
 
-const queryPlaceNames = gql`
-  query Posts {
-    posts(
-      where: {
-        and: [{ categoryName: "Artyści" }, { categoryName: "Promowane" }]
-      }
-    ) {
-      nodes {
-        title
-      }
-    }
-  }
-`;
-
-const Home: NextPage = () => {
+const Home: NextPage = ({ posts }: any) => {
   return (
     <>
       <Head>
@@ -36,7 +23,7 @@ const Home: NextPage = () => {
           <div className="flex flex-col drawer-content">
             <Navbar />
             <Hero />
-            <Featured />
+            <Featured posts={posts} />
             <Footer />
           </div>
           <Drawer />
@@ -47,3 +34,32 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const FeaturedArtistPostsQuery = gql`
+    query FeaturedPosts {
+      posts(where: { categoryName: "Artyści", tag: "Promowany" }, first: 3) {
+        nodes {
+          id
+          title
+          excerpt
+          featuredImage {
+            node {
+              mediaItemUrl
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const { data }: any = await client.query({
+    query: FeaturedArtistPostsQuery,
+  });
+
+  const posts = data.posts.nodes;
+  console.log(posts);
+  return {
+    props: { posts },
+  };
+}
