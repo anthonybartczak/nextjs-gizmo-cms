@@ -11,6 +11,13 @@ html {
   min-height: 3rem;
 }
 
+.featured-section {
+  @apply grid grid-flow-row xl:grid-cols-3
+  justify-items-center
+  gap-10 xl:gap-20
+  pt-10 px-4;
+}
+
 .main-logo-btn {
   @apply border border-black
   hover:text-white hover:border-white hover:bg-black
