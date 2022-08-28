@@ -8,7 +8,7 @@ html {
 }
 
 .navbar {
-  min-height: 3rem;
+  min-height: 2.5rem;
 }
 
 .featured-section {
@@ -30,8 +30,8 @@ html {
 }
 
 .full-nav-btn {
-  @apply hover:text-rose-600 hover:border-white
-  uppercase text-sm font-bold text-gray-300
+  @apply hover:text-white hover:border-white
+  uppercase text-sm text-gray-300
   px-6
   outline-none focus:outline-none
   mx-2
@@ -39,8 +39,8 @@ html {
 }
 
 .main-contact-btn {
-  @apply bg-gray-800 border border-gray-800 hover:bg-gray-600
-  font-bold text-gray-100 uppercase rounded-md
+  @apply bg-gray-100 border hover:bg-gray-300
+  font-bold text-black uppercase rounded-md
   px-2 py-2
   mr-4
   outline-none focus:outline-none

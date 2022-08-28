@@ -13,6 +13,9 @@ module.exports = {
       minWidth: {
         24: "6rem",
       },
+      backgroundImage: {
+        "hero-background": "url('/hero-background.webp')",
+      },
     },
   },
   plugins: [require("daisyui"), require("@tailwindcss/typography")],

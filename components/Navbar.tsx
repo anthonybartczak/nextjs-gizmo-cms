@@ -17,6 +17,10 @@ const buttonItems = [
     label: "Wydarzenia",
     href: "/wydarzenia",
   },
+  {
+    label: "Kontakt",
+    href: "/kontakt",
+  },
 ];
 
 export const Navbar = () => {
@@ -24,7 +28,7 @@ export const Navbar = () => {
     <>
       <nav
         id="navbar"
-        className="navbar bg-gray-800 justify-center sticky top-0 z-50"
+        className="navbar bg-black justify-center sticky top-0 z-50"
       >
         <div className="flex-none lg:hidden">
           <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
