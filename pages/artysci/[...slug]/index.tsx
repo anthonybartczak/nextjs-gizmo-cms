@@ -11,23 +11,28 @@ const Page = ({ post }: any) => (
     <Head>
       <title>{post.title}</title>
     </Head>
-    <article>
-      <Navbar />
-      <header>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: post.title ?? {},
-          }}
-        />
-      </header>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: post.content ?? {},
-        }}
-      />
-    </article>
-    <Footer />
-    <Drawer />
+    <div className="drawer">
+      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+      <div className="flex flex-col drawer-content">
+        <article>
+          <Navbar />
+          <header>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: post.title ?? {},
+              }}
+            />
+          </header>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: post.content ?? {},
+            }}
+          />
+        </article>
+        <Footer />
+      </div>
+      <Drawer />
+    </div>
   </>
 );
 
