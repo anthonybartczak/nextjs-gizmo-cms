@@ -1,10 +1,12 @@
 import client from "../../../lib/apollo";
-import { gql } from "@apollo/client";
 import Head from "next/head";
 import { GetStaticPaths } from "next";
 import { Navbar } from "../../../components/Navbar";
 import { Drawer } from "../../../components/Drawer";
 import { Footer } from "../../../components/Footer";
+import { sanitize } from "../../../utils/misc";
+import { GetAllSlugs, GetPostBySlug } from "../../../utils/queries";
+import styles from "./posts-body.module.css";
 
 const Page = ({ post }: any) => (
   <>
@@ -16,18 +18,22 @@ const Page = ({ post }: any) => (
       <div className="flex flex-col drawer-content">
         <article>
           <Navbar />
-          <header>
+          <div className="flex flex-col max-w-2xl mx-auto mt-12">
+            <header>
+              <h1
+                className="text-5xl"
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(post.title ?? {}),
+                }}
+              />
+            </header>
             <div
+              className={styles.content}
               dangerouslySetInnerHTML={{
-                __html: post.title ?? {},
+                __html: sanitize(post.content ?? {}),
               }}
             />
-          </header>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: post.content ?? {},
-            }}
-          />
+          </div>
         </article>
         <Footer />
       </div>
@@ -39,7 +45,6 @@ const Page = ({ post }: any) => (
 export default Page;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Returns a list of { slug: string } objects, uses getPages underneath
   const { data }: any = await client.query({
     query: GetAllSlugs,
   });
@@ -63,22 +68,3 @@ export async function getStaticProps(context: { params: { slug: any[] } }) {
     props: { post },
   };
 }
-
-const GetPostBySlug = gql`
-  query GetPostBySlug($slug: ID!) {
-    post(id: $slug, idType: SLUG) {
-      title
-      content
-    }
-  }
-`;
-
-const GetAllSlugs = gql`
-  query GetAllSlugs {
-    posts {
-      nodes {
-        slug
-      }
-    }
-  }
-`;

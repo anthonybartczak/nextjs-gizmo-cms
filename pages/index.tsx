@@ -7,7 +7,7 @@ import { Drawer } from "../components/Drawer";
 import { Footer } from "../components/Footer";
 import Featured from "../components/Featured";
 import client from "../lib/apollo";
-import { gql } from "@apollo/client";
+import { GetFeaturedArtistPosts } from "../utils/queries";
 
 const Home: NextPage = ({ posts }: any) => {
   return (
@@ -34,26 +34,8 @@ const Home: NextPage = ({ posts }: any) => {
 export default Home;
 
 export async function getStaticProps() {
-  const FeaturedArtistPostsQuery = gql`
-    query FeaturedPosts {
-      posts(where: { categoryName: "Artyści", tag: "Promowany" }, first: 3) {
-        nodes {
-          id
-          title
-          excerpt
-          featuredImage {
-            node {
-              mediaItemUrl
-            }
-          }
-          slug
-        }
-      }
-    }
-  `;
-
   const { data }: any = await client.query({
-    query: FeaturedArtistPostsQuery,
+    query: GetFeaturedArtistPosts,
   });
 
   const posts = data.posts.nodes;
