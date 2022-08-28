@@ -1,12 +1,14 @@
 import client from "../../../lib/apollo";
 import Head from "next/head";
+import Image from "next/image";
+
 import { GetStaticPaths } from "next";
 import { Navbar } from "../../../components/Navbar";
 import { Drawer } from "../../../components/Drawer";
 import { Footer } from "../../../components/Footer";
 import { sanitize } from "../../../utils/misc";
 import { GetAllSlugs, GetPostBySlug } from "../../../utils/queries";
-import styles from "./posts-body.module.css";
+import styles from "../../post-styles/posts-body.module.css";
 
 const Page = ({ post }: any) => (
   <>
@@ -18,15 +20,22 @@ const Page = ({ post }: any) => (
       <div className="flex flex-col drawer-content">
         <article>
           <Navbar />
-          <div className="flex flex-col max-w-2xl mx-auto mt-12">
+          <div className="flex flex-col max-w-2xl mx-4 xl:mx-auto mt-5">
             <header>
               <h1
-                className="text-5xl"
+                className="text-5xl py-5"
                 dangerouslySetInnerHTML={{
                   __html: sanitize(post.title ?? {}),
                 }}
               />
             </header>
+            <Image
+              alt=""
+              width={1920}
+              height={1080}
+              src={post.featuredImage.node.mediaItemUrl}
+              className="rounded-lg shadow-xl"
+            />
             <div
               className={styles.content}
               dangerouslySetInnerHTML={{
@@ -63,7 +72,7 @@ export async function getStaticProps(context: { params: { slug: any[] } }) {
     variables: { slug: context.params.slug.join(" / ") },
   });
   const post = data.post;
-
+  console.log(post.featuredImage.node.mediaItemUrl);
   return {
     props: { post },
   };

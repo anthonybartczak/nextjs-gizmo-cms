@@ -18,6 +18,10 @@ const buttonItems = [
     label: "Wydarzenia",
     href: "/wydarzenia",
   },
+  {
+    label: "Kontakt",
+    href: "/kontakt",
+  },
 ];
 
 export const Drawer = () => (

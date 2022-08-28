@@ -22,7 +22,7 @@ export default function Featured({ posts }: any) {
               <div className="card-body">
                 <h2 className="text-gray-100 card-title">{item.title}</h2>
                 <div
-                  className="text-gray-200"
+                  className="text-gray-200 text-justify"
                   dangerouslySetInnerHTML={{
                     __html: item.excerpt ?? {},
                   }}

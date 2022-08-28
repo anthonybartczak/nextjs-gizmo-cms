@@ -5,6 +5,11 @@ export const GetPostBySlug = gql`
     post(id: $slug, idType: SLUG) {
       title
       content
+      featuredImage {
+        node {
+          mediaItemUrl
+        }
+      }
     }
   }
 `;

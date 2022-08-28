@@ -3,18 +3,10 @@ import { FaInstagramSquare, FaFacebookSquare } from "react-icons/fa";
 
 export const Hero = () => (
   <div className="hero grid xl:grid-cols-2 py-8 bg-hero-background xl:bg-cover">
-    <div className="hero-content xl:col-start-2 grid">
-      {/* <Image
-        alt=""
-        layout="intrinsic"
-        width={420}
-        height={400}
-        src="/hero-picture.webp"
-        className="rounded-lg shadow-2xl"
-      /> */}
+    <div className="text-justify hero-content xl:col-start-2 grid xl:px-16">
       <div className="">
-        <h1 className="text-white text-6xl font-bold">Management zrobiony </h1>
-        <h1 className="text-6xl font-bold text-rose-600">dobrze.</h1>
+        <h1 className="text-white text-5xl font-bold">Management zrobiony </h1>
+        <h1 className="text-5xl font-bold text-rose-600">dobrze.</h1>
         <p className="text-gray-100 py-5 max-w-2xl">
           Fusce sed lacus ut dolor consequat euismod. Quisque non eros mollis,
           condimentum purus vitae, bibendum quam. In urna leo, facilisis quis
