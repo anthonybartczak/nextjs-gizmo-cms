@@ -1,13 +1,26 @@
 import Link from "next/link";
+import Image from "next/image";
+
 import { FaInstagramSquare, FaFacebookSquare } from "react-icons/fa";
 
 export const Hero = () => (
-  <div className="hero grid xl:grid-cols-2 py-8 bg-hero-background xl:bg-cover">
-    <div className="text-justify hero-content xl:col-start-2 grid xl:px-16">
+  <div className="hero grid xl:grid-cols-2 pb-8 relative">
+    <Image
+      alt="Hero background image"
+      layout="fill"
+      objectFit="cover"
+      objectPosition="center"
+      src="/hero-background.webp"
+      className="opacity-30 md:opacity-100"
+      priority
+    />
+    <div className="text-justify hero-content xl:col-start-2 grid xl:px-16 pt-10">
       <div className="">
-        <h1 className="text-white text-5xl font-bold">Management zrobiony </h1>
+        <h1 className="text-black md:text-white text-5xl font-bold">
+          Management zrobiony{" "}
+        </h1>
         <h1 className="text-5xl font-bold text-rose-600">dobrze.</h1>
-        <p className="text-gray-100 py-5 max-w-2xl">
+        <p className="text-black md:text-white py-5 max-w-2xl">
           Fusce sed lacus ut dolor consequat euismod. Quisque non eros mollis,
           condimentum purus vitae, bibendum quam. In urna leo, facilisis quis
           ipsum quis, finibus viverra massa. Maecenas mi neque, bibendum non
@@ -26,7 +39,7 @@ export const Hero = () => (
             >
               <FaInstagramSquare
                 target="_blank"
-                className="w-10 h-10 hover:text-gray-300 text-gray-100 ease-linear transition-all duration-150"
+                className="w-10 h-10 hover:text-gray-300 text-black md:text-gray-100 ease-linear transition-all duration-150"
               />
             </a>
             <a
@@ -36,7 +49,7 @@ export const Hero = () => (
             >
               <FaFacebookSquare
                 target="_blank"
-                className="w-10 h-10 hover:text-gray-300 text-gray-100 ease-linear transition-all duration-150"
+                className="w-10 h-10 hover:text-gray-300 text-black md:text-gray-100 ease-linear transition-all duration-150"
               />
             </a>
           </div>
