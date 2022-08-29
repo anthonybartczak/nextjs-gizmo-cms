@@ -29,7 +29,7 @@ const Artysci: NextPage = ({ posts }: any) => {
                   <Image
                     alt=""
                     layout="fixed"
-                    width={380}
+                    width={400}
                     height={300}
                     src={post.featuredImage.node.mediaItemUrl}
                     className="rounded-lg shadow-xl"
