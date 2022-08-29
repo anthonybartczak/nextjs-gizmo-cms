@@ -41,3 +41,21 @@ export const GetFeaturedArtistPosts = gql`
     }
   }
 `;
+
+export const GetArtistsListing = gql`
+  query FeaturedPosts {
+    posts(where: { categoryName: "Artyści" }) {
+      nodes {
+        id
+        title
+        excerpt
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
+        slug
+      }
+    }
+  }
+`;

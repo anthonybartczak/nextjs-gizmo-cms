@@ -8,9 +8,12 @@ export default function Featured({ posts }: any) {
         <h2 className="text-black text-4xl font-bold pt-12">
           Nasi promowani artyści
         </h2>
-        <div className="featured-section">
+        <ul className="featured-section">
           {posts.map((item: any) => (
-            <div key={item.id} className="card w-96 shadow-xl image-full">
+            <li
+              key={item.id}
+              className="card w-96 shadow-xl image-full mx-2 xl:mx-auto"
+            >
               <figure>
                 <Image
                   src={item.featuredImage.node.mediaItemUrl}
@@ -33,9 +36,9 @@ export default function Featured({ posts }: any) {
                   </Link>
                 </div>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </>
   );

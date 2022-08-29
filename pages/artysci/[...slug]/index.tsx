@@ -1,7 +1,6 @@
 import client from "../../../lib/apollo";
 import Head from "next/head";
 import Image from "next/image";
-
 import { GetStaticPaths } from "next";
 import { Navbar } from "../../../components/Navbar";
 import { Drawer } from "../../../components/Drawer";
@@ -29,13 +28,15 @@ const Page = ({ post }: any) => (
                 }}
               />
             </header>
-            <Image
-              alt=""
-              width={1920}
-              height={1080}
-              src={post.featuredImage.node.mediaItemUrl}
-              className="rounded-lg shadow-xl"
-            />
+            <figure className="">
+              <Image
+                alt=""
+                width={1500}
+                height={900}
+                src={post.featuredImage.node.mediaItemUrl}
+                className="rounded-lg shadow-xl"
+              />
+            </figure>
             <div
               className={styles.content}
               dangerouslySetInnerHTML={{
@@ -72,7 +73,6 @@ export async function getStaticProps(context: { params: { slug: any[] } }) {
     variables: { slug: context.params.slug.join(" / ") },
   });
   const post = data.post;
-  console.log(post.featuredImage.node.mediaItemUrl);
   return {
     props: { post },
   };
