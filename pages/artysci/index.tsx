@@ -23,7 +23,7 @@ const Artysci: NextPage = ({ posts }: any) => {
             {posts.map((post: any) => (
               <li
                 key={post.id}
-                className="card lg:card-side bg-base-100 shadow-xl my-6 mx-2 xl:mx-48 2xl:mx-96"
+                className="card lg:card-side shadow-xl my-6 mx-2 xl:mx-48 2xl:mx-96 bg-gray-50"
               >
                 <figure>
                   <Image
@@ -36,8 +36,9 @@ const Artysci: NextPage = ({ posts }: any) => {
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title">{post.title}</h2>
+                  <h2 className="card-title text-black">{post.title}</h2>
                   <div
+                    className="text-gray-600"
                     dangerouslySetInnerHTML={{
                       __html: sanitize(post.excerpt ?? {}),
                     }}

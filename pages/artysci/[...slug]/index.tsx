@@ -22,7 +22,7 @@ const Page = ({ post }: any) => (
           <div className="flex flex-col max-w-2xl mx-4 xl:mx-auto mt-5">
             <header>
               <h1
-                className="text-5xl py-5"
+                className="text-5xl py-5 text-black"
                 dangerouslySetInnerHTML={{
                   __html: sanitize(post.title ?? {}),
                 }}
