@@ -42,9 +42,9 @@ export const GetFeaturedArtistPosts = gql`
   }
 `;
 
-export const GetArtistsListing = gql`
-  query FeaturedPosts {
-    posts(where: { categoryName: "Artyści" }) {
+export const GetPostListingByCategory = gql`
+  query FeaturedPosts($categoryName: String) {
+    posts(where: { categoryName: $categoryName }) {
       nodes {
         id
         title

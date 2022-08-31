@@ -8,7 +8,7 @@ export default async (
       emailAddress: string;
     };
   },
-  res: { status: (arg0: number) => void }
+  res: { status: (arg0: number) => void; end: () => void }
 ) => {
   require("dotenv").config();
 
@@ -33,15 +33,16 @@ export default async (
   await new Promise((resolve, reject) => {
     transporter.sendMail(mailData, (err: any, info: any) => {
       if (err) {
+        res.status(500);
         console.error(err);
         reject(err);
+        res.end();
       } else {
+        res.status(200);
         console.log(info);
         resolve(info);
-        alert("The message was sent successfully! Thank you :)");
+        res.end();
       }
     });
   });
-
-  res.status(200);
 };

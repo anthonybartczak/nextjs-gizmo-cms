@@ -6,7 +6,7 @@ import { Navbar } from "../../components/Navbar";
 import { Drawer } from "../../components/Drawer";
 import { Footer } from "../../components/Footer";
 import { sanitize } from "../../utils/misc";
-import { GetArtistsListing } from "../../utils/queries";
+import { GetPostListingByCategory } from "../../utils/queries";
 import Link from "next/link";
 
 const Artysci: NextPage = ({ posts }: any) => {
@@ -21,10 +21,7 @@ const Artysci: NextPage = ({ posts }: any) => {
           <Navbar />
           <ul className="xl:pt-6 2xl:pt-12">
             {posts.map((post: any) => (
-              <li
-                key={post.id}
-                className="card lg:card-side shadow-xl my-6 mx-2 xl:mx-48 2xl:mx-96 bg-gray-50"
-              >
+              <li key={post.id} className="listing-card">
                 <figure>
                   <Image
                     alt=""
@@ -32,7 +29,7 @@ const Artysci: NextPage = ({ posts }: any) => {
                     width={400}
                     height={300}
                     src={post.featuredImage.node.mediaItemUrl}
-                    className="rounded-lg shadow-xl"
+                    className="rounded-l-lg shadow-xl"
                   />
                 </figure>
                 <div className="card-body">
@@ -64,7 +61,8 @@ export default Artysci;
 
 export async function getStaticProps() {
   const { data }: any = await client.query({
-    query: GetArtistsListing,
+    query: GetPostListingByCategory,
+    variables: { categoryName: "Artyści" },
   });
 
   const posts = data.posts.nodes;

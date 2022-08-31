@@ -15,6 +15,13 @@ html {
   max-height: 2.5rem;
 }
 
+.listing-card {
+  @apply card lg:card-side
+  shadow-xl
+  my-6 mx-2 xl:mx-48 2xl:mx-96
+  bg-gray-50;
+}
+
 .featured-section {
   @apply grid grid-flow-row xl:grid-cols-3
   justify-items-center
