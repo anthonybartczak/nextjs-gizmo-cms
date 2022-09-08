@@ -8,11 +8,12 @@ html {
   overflow: hidden;
   width: 100%;
   position: relative;
+  font-family: Montserrat;
 }
 
 .navbar {
-  min-height: 2.5rem;
-  max-height: 2.5rem;
+  min-height: 3rem;
+  max-height: 3rem;
 }
 
 .listing-card {
@@ -42,7 +43,7 @@ html {
 
 .full-nav-btn {
   @apply hover:text-white hover:border-white
-  uppercase text-sm text-gray-300
+  uppercase text-base text-gray-300 font-bold focus:bg-rose-600
   px-6
   outline-none focus:outline-none
   mx-2
@@ -50,7 +51,7 @@ html {
 }
 
 .main-contact-btn {
-  @apply bg-black md:bg-gray-100 hover:bg-gray-300
+  @apply bg-black md:bg-gray-200 hover:bg-gray-300
   font-bold text-gray-100 md:text-black uppercase rounded-md
   px-2 py-2
   mr-4
@@ -76,15 +77,6 @@ html {
     @apply scroll-smooth;
   }
 }
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
 a {
   color: inherit;
   text-decoration: none;

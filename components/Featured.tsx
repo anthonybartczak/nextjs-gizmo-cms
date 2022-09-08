@@ -5,9 +5,7 @@ export default function Featured({ posts }: any) {
   return (
     <>
       <div className="flex flex-col bg-gray-100 items-center xl:pt-12 2xl:pt-24 px-4">
-        <h2 className="text-black text-4xl font-bold pt-12">
-          Nasi promowani artyści
-        </h2>
+        <h2 className="text-black text-4xl font-bold pt-12">Nasi artyści...</h2>
         <ul className="featured-section">
           {posts.map((item: any) => (
             <li
@@ -22,10 +20,11 @@ export default function Featured({ posts }: any) {
                   alt="Artists thumbnail image"
                 />
               </figure>
-              <div className="card-body">
+              <div className="card-body gap-0.5">
                 <h2 className="text-gray-100 card-title">{item.title}</h2>
+                <div className="divider before:bg-rose-600 after:bg-rose-600 my-0.5 h-3"></div>
                 <div
-                  className="text-gray-200 text-justify"
+                  className="text-gray-200 text-sm text-justify"
                   dangerouslySetInnerHTML={{
                     __html: item.excerpt ?? {},
                   }}

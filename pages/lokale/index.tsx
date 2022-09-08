@@ -26,10 +26,10 @@ const Lokale: NextPage = ({ posts }: any) => {
                   <Image
                     alt=""
                     layout="fixed"
-                    width={400}
-                    height={300}
+                    width={450}
+                    height={330}
                     src={post.featuredImage.node.mediaItemUrl}
-                    className="rounded-l-lg shadow-xl"
+                    className="shadow-xl"
                   />
                 </figure>
                 <div className="card-body">

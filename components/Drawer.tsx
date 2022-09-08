@@ -1,28 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-
-const buttonItems = [
-  {
-    label: "O nas",
-    href: "/",
-  },
-  {
-    label: "Artyści",
-    href: "/artysci",
-  },
-  {
-    label: "Lokale",
-    href: "/lokale",
-  },
-  {
-    label: "Wydarzenia",
-    href: "/wydarzenia",
-  },
-  {
-    label: "Kontakt",
-    href: "/kontakt",
-  },
-];
+import { buttonItems } from "../utils/structures";
 
 export const Drawer = () => (
   <>

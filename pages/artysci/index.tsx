@@ -26,14 +26,16 @@ const Artysci: NextPage = ({ posts }: any) => {
                   <Image
                     alt=""
                     layout="fixed"
-                    width={400}
-                    height={300}
+                    width={450}
+                    height={330}
                     src={post.featuredImage.node.mediaItemUrl}
-                    className="rounded-l-lg shadow-xl"
+                    className="shadow-xl"
                   />
                 </figure>
-                <div className="card-body">
+                <div className="card-body gap-0.5">
                   <h2 className="card-title text-black">{post.title}</h2>
+                  <div className="divider before:bg-rose-600 after:bg-rose-600 my-0.5 h-3"></div>
+
                   <div
                     className="text-gray-600"
                     dangerouslySetInnerHTML={{

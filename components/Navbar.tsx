@@ -1,36 +1,25 @@
 import Link from "next/link";
-
-const buttonItems = [
-  {
-    label: "O nas",
-    href: "/",
-  },
-  {
-    label: "Artyści",
-    href: "/artysci",
-  },
-  {
-    label: "Lokale",
-    href: "/lokale",
-  },
-  {
-    label: "Wydarzenia",
-    href: "/wydarzenia",
-  },
-  {
-    label: "Kontakt",
-    href: "/kontakt",
-  },
-];
+import Image from "next/image";
+import { buttonItems } from "../utils/structures";
 
 export const Navbar = () => {
   return (
     <>
       <nav
         id="navbar"
-        className="navbar bg-black justify-center sticky top-0 z-50"
+        className="navbar bg-black sticky top-0 z-50 justify-center"
       >
-        <div className="flex-none lg:hidden">
+        <Link href="/" passHref>
+          <a className="mr-auto ml-1">
+            <Image
+              alt="Navbar logo"
+              width={99}
+              height={33}
+              src="/navbar-logo.webp"
+            />
+          </a>
+        </Link>
+        <div className="flex-none lg:hidden ">
           <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
