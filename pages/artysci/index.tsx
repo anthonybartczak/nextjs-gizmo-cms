@@ -35,7 +35,6 @@ const Artysci: NextPage = ({ posts }: any) => {
                 <div className="card-body gap-0.5">
                   <h2 className="card-title text-black">{post.title}</h2>
                   <div className="divider before:bg-rose-600 after:bg-rose-600 my-0.5 h-3"></div>
-
                   <div
                     className="text-gray-600"
                     dangerouslySetInnerHTML={{

@@ -51,8 +51,8 @@ html {
 }
 
 .main-contact-btn {
-  @apply bg-black md:bg-gray-200 hover:bg-gray-300
-  font-bold text-gray-100 md:text-black uppercase rounded-md
+  @apply bg-gray-200 hover:bg-gray-300
+  font-bold text-black uppercase rounded-md
   px-2 py-2
   mr-4
   outline-none focus:outline-none

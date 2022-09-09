@@ -22,19 +22,20 @@ const Page = ({ post }: any) => (
           <div className="flex flex-col max-w-2xl mx-4 xl:mx-auto mt-5">
             <header>
               <h1
-                className="text-5xl py-5 text-black"
+                className="text-5xl text-black"
                 dangerouslySetInnerHTML={{
                   __html: sanitize(post.title ?? {}),
                 }}
               />
             </header>
-            <figure className="">
+            <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>
+            <figure className="drop-shadow-xl">
               <Image
                 alt=""
                 width={1500}
                 height={900}
                 src={post.featuredImage.node.mediaItemUrl}
-                className="rounded-lg shadow-xl"
+                className=""
               />
             </figure>
             <div

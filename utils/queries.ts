@@ -5,6 +5,12 @@ export const GetPostBySlug = gql`
     post(id: $slug, idType: SLUG) {
       title
       content
+      contactName
+      contactEmail
+      contactPhone
+      postFacebook
+      postSpotify
+      postYoutube
       featuredImage {
         node {
           mediaItemUrl
