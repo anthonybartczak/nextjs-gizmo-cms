@@ -3,12 +3,12 @@
 
 body,
 html {
-  margin: 0;
-  height: 100%;
-  overflow: hidden;
   width: 100%;
-  position: relative;
-  font-family: Montserrat;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden !important;
+  font-family: Syne;
 }
 
 .navbar {

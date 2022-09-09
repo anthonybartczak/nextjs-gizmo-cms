@@ -15,7 +15,7 @@ export default function Document() {
         <meta property="og:url" content="http://www.gizmo.com.pl/" />
         <meta property="og:type" content="website" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Syne&display=swap"
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon.ico" />
