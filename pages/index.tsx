@@ -18,7 +18,7 @@ const Home: NextPage = ({ posts }: any) => {
       <main>
         <div className="drawer">
           <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-          <div className="flex flex-col drawer-content">
+          <div className="flex flex-col drawer-content relative overflow-hidden">
             <Navbar />
             <Hero />
             <Featured posts={posts} />

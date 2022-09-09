@@ -10,6 +10,10 @@ export default function Document() {
           name="keyword"
           content="event management, management, artist, artysta, , poland, łódź, eventy, event, lokale, kluby, imprezy, manager, menadzer"
         />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1"
+        />
         <meta property="og:title" content="Agencja Gizmo Management" />
         <meta property="og:description" content="" />
         <meta property="og:url" content="http://www.gizmo.com.pl/" />
