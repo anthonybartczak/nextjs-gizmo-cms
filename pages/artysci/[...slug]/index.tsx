@@ -43,7 +43,7 @@ const Page = ({ post }: any) => (
             <div className="mt-4">
               <SocialLinks post={post} />
             </div>
-            <div className="flex flex-col mt-4">
+            <div className="flex flex-col mt-4 text-gray-800">
               <span>Manager:</span>
               <div className="flex">
                 <MdPerson className="mt-1 mr-1" />
