@@ -9,7 +9,7 @@ export const Drawer = () => (
         {buttonItems.map((item) => (
           <li key={item.label}>
             <Link href={item.href} passHref>
-              <a className="uppercase text-black">{item.label}</a>
+              <a className="drawer-nav-btn">{item.label}</a>
             </Link>
           </li>
         ))}

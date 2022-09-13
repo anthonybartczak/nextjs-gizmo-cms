@@ -28,7 +28,13 @@ html {
   @apply grid grid-flow-row xl:grid-cols-3
   justify-items-center
   gap-10 xl:gap-20
-  pt-10 px-4;
+  pt-10;
+}
+
+.detail-social-links {
+  @apply w-9 h-9
+  hover:text-gray-500 text-gray-800
+  ease-linear transition-all duration-150;
 }
 
 .main-logo-btn {
@@ -45,6 +51,15 @@ html {
 .full-nav-btn {
   @apply hover:text-white hover:border-white
   uppercase text-base text-gray-300 font-bold focus:bg-rose-600
+  px-6
+  outline-none focus:outline-none
+  mx-2
+  ease-linear transition-all duration-150;
+}
+
+.drawer-nav-btn {
+  @apply uppercase text-black
+  text-base font-bold hover:bg-rose-600 hover:text-white
   px-6
   outline-none focus:outline-none
   mx-2

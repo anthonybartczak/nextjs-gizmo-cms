@@ -11,6 +11,8 @@ export const GetPostBySlug = gql`
       postFacebook
       postSpotify
       postYoutube
+      postAppleMusic
+      postTidal
       featuredImage {
         node {
           mediaItemUrl

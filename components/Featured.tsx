@@ -4,13 +4,13 @@ import Image from "next/image";
 export default function Featured({ posts }: any) {
   return (
     <>
-      <div className="flex flex-col bg-gray-100 items-center xl:pt-12 2xl:pt-24 px-4">
+      <div className="flex flex-col bg-gray-100 items-center xl:pt-12 2xl:pt-24">
         <h2 className="text-black text-4xl font-bold pt-12">Nasi artyści...</h2>
         <ul className="featured-section">
           {posts.map((item: any) => (
             <li
               key={item.id}
-              className="card w-96 shadow-xl image-full mx-2 xl:mx-auto"
+              className="card w-96 shadow-xl image-full xl:mx-auto "
             >
               <figure>
                 <Image

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-
 import { FaInstagramSquare, FaFacebookSquare } from "react-icons/fa";
 
 export const Hero = () => (
@@ -13,7 +12,7 @@ export const Hero = () => (
       src="/hero-background.webp"
       priority
     />
-    <div className="text-justify hero-content xl:col-start-2 grid xl:px-16 pt-10 2xl:py-12 xl:bg-transparent bg-black bg-opacity-50">
+    <div className="text-justify hero-content px-4 xl:col-start-2 grid xl:px-16 pt-10 2xl:py-12 xl:bg-transparent bg-black bg-opacity-50">
       <div className="">
         <h1 className="text-gray-100 text-5xl font-extrabold">
           Management zrobiony

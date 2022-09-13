@@ -4,6 +4,7 @@ import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import { SuccessModal } from "../../components/SuccessModal";
 import { Drawer } from "../../components/Drawer";
+import { MdPerson, MdEmail, MdLocalPhone } from "react-icons/md";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -54,7 +55,7 @@ function Contact() {
           <Navbar />
           <form
             id="contact-form"
-            className="mx-4 mt-12 mb-12 rounded-2xl bg-gray-50 px-8 pt-8 pb-1 shadow-xl md:col-span-8 xl:mx-80"
+            className="mx-4 mt-12 mb-4 rounded-2xl bg-gray-50 px-8 pt-8 pb-1 shadow-xl md:col-span-8 xl:mx-80"
           >
             <div className="-mx-3 flex flex-wrap">
               <div className="w-full px-3 md:mb-0 md:w-1/2">
@@ -151,6 +152,40 @@ function Contact() {
               </div>
             </div>
           </form>
+          <div className="flex mb-12 md:gap-4 xl:mx-80 flex-wrap mx-4">
+            <div className="mb-4 rounded-2xl bg-gray-50 px-8 py-8 shadow-xl flex grow">
+              <div className="flex flex-col text-gray-800 gap-2">
+                <div className="flex">
+                  <MdPerson className="mt-1 mr-1" />
+                  <span>Szymon Wiśniewski</span>
+                </div>
+                <div className="flex">
+                  <MdEmail className="mt-1 mr-1" />
+                  <span>gizmo@gizmo.com.pl</span>
+                </div>
+                <div className="flex">
+                  <MdLocalPhone className="mt-1 mr-1" />
+                  <span>+48 123 456 789</span>
+                </div>
+              </div>
+            </div>
+            <div className="mb-4 rounded-2xl bg-gray-50 px-8 py-8 shadow-xl flex grow">
+              <div className="flex flex-col text-gray-800 gap-2">
+                <div className="flex">
+                  <MdPerson className="mt-1 mr-1" />
+                  <span>Szymon Wiśniewski</span>
+                </div>
+                <div className="flex">
+                  <MdEmail className="mt-1 mr-1" />
+                  <span>gizmo@gizmo.com.pl</span>
+                </div>
+                <div className="flex">
+                  <MdLocalPhone className="mt-1 mr-1" />
+                  <span>+48 123 456 789</span>
+                </div>
+              </div>
+            </div>
+          </div>
           <Footer />
         </div>
         <Drawer />

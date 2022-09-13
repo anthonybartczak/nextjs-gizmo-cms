@@ -8,6 +8,8 @@ import { Footer } from "../../../components/Footer";
 import { sanitize } from "../../../utils/misc";
 import { GetAllSlugs, GetPostBySlug } from "../../../utils/queries";
 import styles from "../../post-styles/posts-body.module.css";
+import SocialLinks from "../../../components/SocialLinks";
+import { MdPerson, MdEmail, MdLocalPhone } from "react-icons/md";
 
 const Page = ({ post }: any) => (
   <>
@@ -38,6 +40,24 @@ const Page = ({ post }: any) => (
                 className=""
               />
             </figure>
+            <div className="mt-4">
+              <SocialLinks post={post} />
+            </div>
+            <div className="flex flex-col mt-4">
+              <span>Manager:</span>
+              <div className="flex">
+                <MdPerson className="mt-1 mr-1" />
+                <span>{post.contactName}</span>
+              </div>
+              <div className="flex">
+                <MdEmail className="mt-1 mr-1" />
+                <span>{post.contactEmail}</span>
+              </div>
+              <div className="flex">
+                <MdLocalPhone className="mt-1 mr-1" />
+                <span>{post.contactPhone}</span>
+              </div>
+            </div>
             <div
               className={styles.content}
               dangerouslySetInnerHTML={{
