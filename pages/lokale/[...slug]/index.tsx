@@ -1,4 +1,4 @@
-import client from "../../../lib/apollo";
+import apolloClient from "../../../lib/apollo";
 import Head from "next/head";
 import Image from "next/image";
 import { GetStaticPaths } from "next";
@@ -55,7 +55,7 @@ const Page = ({ post }: any) => (
 export default Page;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data }: any = await client.query({
+  const { data }: any = await apolloClient.query({
     query: GetAllSlugs,
   });
 
@@ -68,7 +68,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export async function getStaticProps(context: { params: { slug: any[] } }) {
-  const { data }: any = await client.query({
+  const { data }: any = await apolloClient.query({
     query: GetPostBySlug,
     variables: { slug: context.params.slug.join(" / ") },
   });

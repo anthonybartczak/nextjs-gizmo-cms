@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import client from "../../lib/apollo";
+import apolloClient from "../../lib/apollo";
 import Head from "next/head";
 import Image from "next/image";
 import { Navbar } from "../../components/Navbar";
@@ -60,7 +60,7 @@ const Lokale: NextPage = ({ posts }: any) => {
 export default Lokale;
 
 export async function getStaticProps() {
-  const { data }: any = await client.query({
+  const { data }: any = await apolloClient.query({
     query: GetPostListingByCategory,
     variables: { categoryName: "Lokale" },
   });

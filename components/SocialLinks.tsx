@@ -9,7 +9,7 @@ import {
 export default function SocialLinks({ post }: any) {
   return (
     <>
-      <div className="flex gap-2">
+      <div className="flex gap-2 justify-end">
         {post.postFacebook ? (
           <a href={post.postFacebook} target="_blank" rel="noopener noreferrer">
             <SiFacebook target="_blank" className="detail-social-links" />

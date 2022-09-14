@@ -8,6 +8,7 @@ export const GetPostBySlug = gql`
       contactName
       contactEmail
       contactPhone
+      contactFunction
       postFacebook
       postSpotify
       postYoutube
@@ -33,7 +34,7 @@ export const GetAllSlugs = gql`
 `;
 
 export const GetFeaturedArtistPosts = gql`
-  query FeaturedPosts {
+  query GetFeaturedArtistPosts {
     posts(where: { categoryName: "Artyści", tag: "Promowany" }, first: 3) {
       nodes {
         id
@@ -51,7 +52,7 @@ export const GetFeaturedArtistPosts = gql`
 `;
 
 export const GetPostListingByCategory = gql`
-  query FeaturedPosts($categoryName: String) {
+  query GetPostListingByCategory($categoryName: String) {
     posts(where: { categoryName: $categoryName }) {
       nodes {
         id
@@ -63,6 +64,29 @@ export const GetPostListingByCategory = gql`
           }
         }
         slug
+      }
+    }
+  }
+`;
+
+export const GetAllEvents = gql`
+  query GetAllEvents {
+    events {
+      nodes {
+        id
+        slug
+        title
+        excerpt
+        date
+        venue {
+          city
+          address
+        }
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
       }
     }
   }

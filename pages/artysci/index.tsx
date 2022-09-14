@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import client from "../../lib/apollo";
+import apolloClient from "../../lib/apollo";
 import Head from "next/head";
 import Image from "next/image";
 import { Navbar } from "../../components/Navbar";
@@ -21,7 +21,7 @@ const Artysci: NextPage = ({ posts }: any) => {
           <Navbar />
           <ul className="xl:pt-6 2xl:pt-12">
             {posts.map((post: any) => (
-              <li key={post.id} className="listing-card">
+              <li key={post.id} className="artist-listing-card">
                 <figure>
                   <Image
                     alt=""
@@ -61,7 +61,7 @@ const Artysci: NextPage = ({ posts }: any) => {
 export default Artysci;
 
 export async function getStaticProps() {
-  const { data }: any = await client.query({
+  const { data }: any = await apolloClient.query({
     query: GetPostListingByCategory,
     variables: { categoryName: "Artyści" },
   });
