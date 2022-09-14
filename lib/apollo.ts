@@ -39,7 +39,7 @@ const fetchHeaderWithToken = async (headers = {}) => {
       if (typeof localStorage !== "undefined") {
         localStorage.setItem("tk", authToken);
         localStorage.setItem("ex", jwtAuthExpiration);
-        console.log("Storing ", authToken, jwtAuthExpiration);
+        //console.log("Storing ", authToken, jwtAuthExpiration);
       }
       tokenCache = authToken;
       tokenExpiryCache = jwtAuthExpiration;
@@ -57,7 +57,7 @@ const customFetch = async (
   uri: RequestInfo,
   options: RequestInit
 ): Promise<Response> => {
-  console.log("customFetch() ", tokenCache, tokenExpiryCache);
+  //console.log("customFetch() ", tokenCache, tokenExpiryCache);
   const ex =
     typeof localStorage !== "undefined"
       ? localStorage.getItem("ex")
@@ -82,14 +82,14 @@ const customFetch = async (
   return initialRequest
     .then((response) => response.json())
     .then(async (json) => {
-      console.log("json ", json, options, uri);
+      //console.log("json ", json, options, uri);
       if (
         json &&
         json.errors &&
         json.errors.length > 0 &&
         json.errors[0].message === "Internal server error"
       ) {
-        console.log("Trying to refresh token ", json);
+        //console.log("Trying to refresh token ", json);
         // time to refresh token. Error is internal server error
         return fetch("https://wp.gizmo.com.pl/graphql", {
           method: "POST",
@@ -114,12 +114,12 @@ const customFetch = async (
               data: { authToken },
               errors = [],
             } = j;
-            console.log("reAuth j with errros: ", errors);
+            //console.log("reAuth j with errros: ", errors);
             if (
               errors.length > 0 &&
               errors[0].message === "The provided refresh token is invalid"
             ) {
-              console.log("invalid token, need new");
+              //console.log("invalid token, need new");
               const headerWithNewToken = await fetchHeaderWithToken();
               return fetch(uri, {
                 ...options,

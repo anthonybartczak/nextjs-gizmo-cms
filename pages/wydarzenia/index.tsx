@@ -71,7 +71,7 @@ export async function getStaticProps() {
   });
 
   const events = data.events.nodes;
-  console.log(events);
+
   return {
     props: { events },
     revalidate: 30,
