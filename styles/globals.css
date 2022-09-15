@@ -21,14 +21,14 @@ html {
 .artist-listing-card {
   @apply card lg:card-side
   shadow-xl
-  my-6 mx-2 xl:mx-48 2xl:mx-96
+  mb-8 mx-2 xl:mx-48 2xl:mx-96
   bg-gray-50;
 }
 
 .event-listing-card {
   @apply card lg:card-side
   shadow-xl
-  my-6 mx-2 xl:mx-48 2xl:mx-96
+  mb-8 mx-2 xl:mx-48 2xl:mx-96
   bg-gray-50;
 }
 
@@ -86,12 +86,22 @@ html {
 
 .main-card-btn {
   @apply text-sm
- text-white bg-gray-800 rounded-md hover:bg-gray-600
+ text-black bg-gray-100 rounded-md hover:bg-rose-600 hover:text-white
   px-1 py-1
   mr-4
   outline-none focus:outline-none
   ease-linear transition-all duration-150
-  w-20 h-8;
+  w-20 h-8 shadow-md;
+}
+
+.featured-card-btn {
+  @apply text-sm
+ text-gray-200 bg-gray-800 rounded-md hover:bg-rose-600
+  px-1 py-1
+  mr-4
+  outline-none focus:outline-none
+  ease-linear transition-all duration-150
+  w-20 h-8 shadow-md;
 }
 
 @tailwind utilities;

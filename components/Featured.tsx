@@ -31,7 +31,7 @@ export default function Featured({ posts }: any) {
                 />
                 <div className="card-actions justify-end absolute bottom-8 right-4">
                   <Link href={"/artysci/" + item.slug} passHref>
-                    <button className="main-card-btn">więcej</button>
+                    <button className="featured-card-btn">więcej</button>
                   </Link>
                 </div>
               </div>

@@ -9,7 +9,15 @@ import { sanitize } from "../../../utils/misc";
 import { GetAllEventSlugs, GetEventBySlug } from "../../../utils/queries";
 import styles from "../../post-styles/posts-body.module.css";
 import SocialLinks from "../../../components/SocialLinks";
-import { MdPerson, MdEmail, MdLocalPhone } from "react-icons/md";
+import {
+  MdPerson,
+  MdEmail,
+  MdLocalPhone,
+  MdLocationCity,
+  MdLocationPin,
+  MdAccessTime,
+  MdOutlineCalendarToday,
+} from "react-icons/md";
 
 const EventPage = ({ event }: any) => (
   <>
@@ -30,6 +38,7 @@ const EventPage = ({ event }: any) => (
                 }}
               />
             </header>
+
             <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>
             <figure className="drop-shadow-xl">
               <Image
@@ -40,19 +49,39 @@ const EventPage = ({ event }: any) => (
                 className=""
               />
             </figure>
-            <div className="flex flex-col mt-4 text-gray-800">
-              <span>{event.contactFunction}:</span>
-              <div className="flex">
-                <MdPerson className="mt-1 mr-1" />
-                <span>{event.contactName}</span>
+            <div className="flex mt-4 justify-start gap-8">
+              <div className="text-gray-800">
+                <span>{event.contactFunction}:</span>
+                <div className="flex">
+                  <MdPerson className="mt-1 mr-1" />
+                  <span>{event.contactName}</span>
+                </div>
+                <div className="flex">
+                  <MdEmail className="mt-1 mr-1" />
+                  <span>{event.contactEmail}</span>
+                </div>
+                <div className="flex">
+                  <MdLocalPhone className="mt-1 mr-1" />
+                  <span>{event.contactPhone}</span>
+                </div>
               </div>
-              <div className="flex">
-                <MdEmail className="mt-1 mr-1" />
-                <span>{event.contactEmail}</span>
-              </div>
-              <div className="flex">
-                <MdLocalPhone className="mt-1 mr-1" />
-                <span>{event.contactPhone}</span>
+              <div className="text-gray-800">
+                <div className="flex">
+                  <MdLocationCity className="mt-1 mr-1" />
+                  <span>{event.venue.city}</span>
+                </div>
+                <div className="flex">
+                  <MdLocationPin className="mt-1 mr-1" />
+                  <span>{event.venue.address}</span>
+                </div>
+                <div className="flex">
+                  <MdOutlineCalendarToday className="mt-1 mr-1" />
+                  <span>{event.date.split("T")[0]}</span>
+                </div>
+                <div className="flex">
+                  <MdAccessTime className="mt-1 mr-1" />
+                  <span>{event.date.split("T")[1]}</span>
+                </div>
               </div>
             </div>
             <div
@@ -76,7 +105,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { data }: any = await apolloClient.query({
     query: GetAllEventSlugs,
   });
-  console.log(data);
+
   return {
     paths: data.events.nodes.map(({ slug }: any) => ({
       params: { slug: slug.split("/") },
@@ -90,8 +119,9 @@ export async function getStaticProps(context: { params: { slug: any[] } }) {
     query: GetEventBySlug,
     variables: { slug: context.params.slug.join(" / ") },
   });
+
   const event = data.event;
-  console.log(event);
+
   return {
     props: { event },
     revalidate: 30,

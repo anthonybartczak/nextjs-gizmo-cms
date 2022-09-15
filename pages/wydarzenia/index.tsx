@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Navbar } from "../../components/Navbar";
 import { Drawer } from "../../components/Drawer";
 import { Footer } from "../../components/Footer";
-import { sanitize } from "../../utils/misc";
 import { GetAllEvents } from "../../utils/queries";
 import Link from "next/link";
 import {
@@ -25,7 +24,7 @@ const Events: NextPage = ({ events }: any) => {
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="flex flex-col drawer-content">
           <Navbar />
-          <ul className="xl:pt-6 2xl:pt-12">
+          <ul className="pt-4">
             {events.map((event: any) => (
               <li key={event.id} className="event-listing-card">
                 <figure>

@@ -55,7 +55,7 @@ function Contact() {
           <Navbar />
           <form
             id="contact-form"
-            className="mx-4 mt-12 mb-4 rounded-2xl bg-gray-50 px-8 pt-8 pb-1 shadow-xl md:col-span-8 xl:mx-80"
+            className="mx-4 mt-4 mb-4 rounded-2xl bg-gray-50 px-8 pt-8 pb-1 shadow-xl md:col-span-8 xl:mx-80"
           >
             <div className="-mx-3 flex flex-wrap">
               <div className="w-full px-3 md:mb-0 md:w-1/2">
