@@ -9,7 +9,7 @@ import { sanitize } from "../../utils/misc";
 import { GetPostListingByCategory } from "../../utils/queries";
 import Link from "next/link";
 
-const Artysci: NextPage = ({ posts }: any) => {
+const Artists: NextPage = ({ posts }: any) => {
   return (
     <>
       <Head>
@@ -27,9 +27,9 @@ const Artysci: NextPage = ({ posts }: any) => {
                     alt=""
                     layout="fixed"
                     width={450}
-                    height={330}
+                    height={253}
                     src={post.featuredImage.node.mediaItemUrl}
-                    className="shadow-xl"
+                    className="shadow-xl object-cover"
                   />
                 </figure>
                 <div className="card-body gap-0.5">
@@ -58,7 +58,7 @@ const Artysci: NextPage = ({ posts }: any) => {
   );
 };
 
-export default Artysci;
+export default Artists;
 
 export async function getStaticProps() {
   const { data }: any = await apolloClient.query({

@@ -11,7 +11,7 @@ import styles from "../../post-styles/posts-body.module.css";
 import SocialLinks from "../../../components/SocialLinks";
 import { MdPerson, MdEmail, MdLocalPhone } from "react-icons/md";
 
-const Page = ({ post }: any) => (
+const ArtistPage = ({ post }: any) => (
   <>
     <Head>
       <title>{post.title}</title>
@@ -34,8 +34,8 @@ const Page = ({ post }: any) => (
             <figure className="drop-shadow-xl">
               <Image
                 alt=""
-                width={1500}
-                height={900}
+                width={1280}
+                height={720}
                 src={post.featuredImage.node.mediaItemUrl}
                 className=""
               />
@@ -73,7 +73,7 @@ const Page = ({ post }: any) => (
   </>
 );
 
-export default Page;
+export default ArtistPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data }: any = await apolloClient.query({

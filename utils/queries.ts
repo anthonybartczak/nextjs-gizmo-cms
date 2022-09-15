@@ -91,3 +91,27 @@ export const GetAllEvents = gql`
     }
   }
 `;
+
+export const GetAllEventSlugs = gql`
+  query GetAllEventSlugs {
+    events {
+      nodes {
+        slug
+      }
+    }
+  }
+`;
+
+export const GetEventBySlug = gql`
+  query GetEventBySlug($slug: ID!) {
+    event(id: $slug, idType: SLUG) {
+      title
+      content
+      featuredImage {
+        node {
+          mediaItemUrl
+        }
+      }
+    }
+  }
+`;
