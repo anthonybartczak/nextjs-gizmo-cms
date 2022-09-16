@@ -38,7 +38,25 @@ const EventPage = ({ event }: any) => (
                 }}
               />
             </header>
-
+            <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>
+            <div className="grid grid-cols-2 grid-rows-2 text-gray-800">
+              <div className="flex">
+                <MdLocationCity className="mt-1 mr-1" />
+                <span>{event.venue.city}</span>
+              </div>
+              <div className="flex">
+                <MdLocationPin className="mt-1 mr-1" />
+                <span>{event.venue.address}</span>
+              </div>
+              <div className="flex">
+                <MdOutlineCalendarToday className="mt-1 mr-1" />
+                <span>{event.date.split("T")[0]}</span>
+              </div>
+              <div className="flex">
+                <MdAccessTime className="mt-1 mr-1" />
+                <span>{event.date.split("T")[1]}</span>
+              </div>
+            </div>
             <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>
             <figure className="drop-shadow-xl">
               <Image
@@ -49,8 +67,9 @@ const EventPage = ({ event }: any) => (
                 className=""
               />
             </figure>
-            <div className="flex mt-4 justify-start gap-8">
-              <div className="text-gray-800">
+            <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>
+            <div className="flex justify-start gap-4 md:flex-row flex-col">
+              <div className="text-gray-800 mt-4">
                 <span>{event.contactFunction}:</span>
                 <div className="flex">
                   <MdPerson className="mt-1 mr-1" />
@@ -63,24 +82,6 @@ const EventPage = ({ event }: any) => (
                 <div className="flex">
                   <MdLocalPhone className="mt-1 mr-1" />
                   <span>{event.contactPhone}</span>
-                </div>
-              </div>
-              <div className="text-gray-800">
-                <div className="flex">
-                  <MdLocationCity className="mt-1 mr-1" />
-                  <span>{event.venue.city}</span>
-                </div>
-                <div className="flex">
-                  <MdLocationPin className="mt-1 mr-1" />
-                  <span>{event.venue.address}</span>
-                </div>
-                <div className="flex">
-                  <MdOutlineCalendarToday className="mt-1 mr-1" />
-                  <span>{event.date.split("T")[0]}</span>
-                </div>
-                <div className="flex">
-                  <MdAccessTime className="mt-1 mr-1" />
-                  <span>{event.date.split("T")[1]}</span>
                 </div>
               </div>
             </div>

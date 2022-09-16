@@ -67,10 +67,10 @@ html {
 
 .drawer-nav-btn {
   @apply uppercase text-black
-  text-base font-bold hover:bg-rose-600 hover:text-white
-  px-6
+  text-xl hover:bg-rose-600 hover:text-white
+  hover:rounded-none focus:rounded-none
   outline-none focus:outline-none
-  mx-2
+  !rounded-none
   ease-linear transition-all duration-150;
 }
 
