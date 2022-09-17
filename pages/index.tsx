@@ -5,11 +5,11 @@ import { Hero } from "../components/Hero";
 import { Navbar } from "../components/Navbar";
 import { Drawer } from "../components/Drawer";
 import { Footer } from "../components/Footer";
-import Featured from "../components/Featured";
-import client from "../lib/apollo";
+import { Featured } from "../components/Featured";
+import apolloClient from "../lib/apollo";
 import { GetFeaturedArtistPosts } from "../utils/queries";
 
-const Home: NextPage = ({ posts }: any) => {
+const Home: NextPage = ({ posts, events }: any) => {
   return (
     <>
       <Head>
@@ -34,11 +34,11 @@ const Home: NextPage = ({ posts }: any) => {
 export default Home;
 
 export async function getStaticProps() {
-  const { data }: any = await client.query({
+  const { data: featuredPosts }: any = await apolloClient.query({
     query: GetFeaturedArtistPosts,
   });
 
-  const posts = data.posts.nodes;
+  const posts = featuredPosts.posts.nodes;
 
   return {
     props: { posts },

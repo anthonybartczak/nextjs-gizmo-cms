@@ -56,6 +56,22 @@ html {
   w-40;
 }
 
+.fc-day-today {
+  @apply !bg-rose-100;
+}
+
+.fc-daygrid-event-dot {
+  @apply !border-rose-600;
+}
+
+.fc-button {
+  @apply !bg-rose-600 !border-none;
+}
+
+.fc-toolbar-title {
+  @apply capitalize text-xl;
+}
+
 .full-nav-btn {
   @apply hover:text-white hover:border-white
   uppercase text-base text-gray-300 font-bold focus:bg-rose-600

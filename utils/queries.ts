@@ -124,3 +124,16 @@ export const GetEventBySlug = gql`
     }
   }
 `;
+
+export const GetAllEventsCalendar = gql`
+  query GetAllEventsCalendar {
+    events {
+      nodes {
+        id
+        title
+        startDate
+        slug
+      }
+    }
+  }
+`;
