@@ -64,12 +64,13 @@ html {
   @apply !border-rose-600;
 }
 
-.fc-button {
+.fc-button,
+.fc-timegrid-event {
   @apply !bg-rose-600 !border-none;
 }
 
 .fc-toolbar-title {
-  @apply capitalize text-xl;
+  @apply capitalize text-xl text-center;
 }
 
 .full-nav-btn {

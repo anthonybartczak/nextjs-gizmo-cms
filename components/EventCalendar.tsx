@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import { useRouter } from "next/router";
 
 const buttonText = {
   today: "Teraz",
@@ -18,22 +18,32 @@ const slotLabelFormat = {
   omitZeroMinute: false,
 };
 
-export const EventCalendar = ({ events }: any) => {
-  const calendar = events.map(({ startDate, ...e }: any) => ({
+const headerToolbar = {
+  left: "prev,next",
+  center: "title",
+  right: "dayGridMonth,timeGridDay",
+};
+
+export function EventCalendar({ events }: any) {
+  const calendar = events.map(({ startDate, slug, ...e }: any) => ({
     ...e,
     date: startDate,
+    url: slug,
   }));
 
   return (
     <>
-      <div className="mt-4">
+      <div className="mt-4 mx-1 xl:mx-4 text-gray-800">
         <FullCalendar
-          plugins={[dayGridPlugin]}
+          plugins={[dayGridPlugin, timeGridPlugin]}
+          contentHeight={700}
           initialView="dayGridMonth"
+          headerToolbar={headerToolbar}
           locale="pl"
           events={calendar}
           buttonText={buttonText}
           eventDisplay="auto"
+          navLinks={true}
           //@ts-ignore
           eventTimeFormat={slotLabelFormat}
           firstDay={1}
@@ -41,4 +51,4 @@ export const EventCalendar = ({ events }: any) => {
       </div>
     </>
   );
-};
+}
