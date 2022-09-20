@@ -50,11 +50,11 @@ const EventPage = ({ event }: any) => (
               </div>
               <div className="flex">
                 <MdOutlineCalendarToday className="mt-1 mr-1" />
-                <span>{event.date.split("T")[0]}</span>
+                <span>{event.startDate.split(" ")[0]}</span>
               </div>
               <div className="flex">
                 <MdAccessTime className="mt-1 mr-1" />
-                <span>{event.date.split("T")[1]}</span>
+                <span>{event.startDate.split(" ")[1]}</span>
               </div>
             </div>
             <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>

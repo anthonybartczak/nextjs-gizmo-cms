@@ -13,6 +13,12 @@ html {
   scroll-behavior: smooth;
 }
 
+.card,
+.card-body,
+.card.image-full:before {
+  @apply !rounded-none;
+}
+
 .navbar {
   min-height: 3rem;
   max-height: 3rem;
@@ -33,10 +39,10 @@ html {
 }
 
 .featured-section {
-  @apply grid grid-flow-row xl:grid-cols-3
+  @apply grid grid-flow-row xl:grid-cols-4
   justify-items-center
-  gap-10 xl:gap-20
-  pt-10;
+  gap-2
+  pt-10 px-1;
 }
 
 .detail-social-links {
@@ -93,7 +99,7 @@ html {
 
 .main-contact-btn {
   @apply bg-gray-200 hover:bg-gray-300
-  font-bold text-black uppercase rounded-md
+  font-bold text-black uppercase
   px-2 py-2
   mr-4
   outline-none focus:outline-none

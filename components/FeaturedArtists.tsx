@@ -1,17 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export const Featured = ({ posts }: any) => (
+export const FeaturedArtists = ({ posts }: any) => (
   <>
-    <div className="flex flex-col bg-gray-100 items-center xl:pt-12 2xl:pt-24">
-      <h2 className="text-black text-4xl font-bold pt-12">Nasi artyści...</h2>
-      <ul className="featured-section">
+    <div className="flex flex-col bg-gray-100 items-center">
+      <ul className="featured-section ">
+        <li className="card w-84 min-w-full">
+          <div className="flex flex-col card-body !bg-rose-600 text-4xl text-gray-50">
+            <h1>Nasi</h1>
+            <h1>artyści</h1>
+          </div>
+        </li>
         {posts.map((item: any) => (
-          <li
-            key={item.id}
-            className="card w-96 shadow-xl image-full xl:mx-auto "
-          >
-            <figure>
+          <li key={item.id} className="card w-84 shadow-xl image-full">
+            <figure className="card-image">
               <Image
                 src={item.featuredImage.node.mediaItemUrl}
                 width={400}
@@ -19,7 +21,7 @@ export const Featured = ({ posts }: any) => (
                 alt="Artists thumbnail image"
               />
             </figure>
-            <div className="card-body gap-0.5">
+            <div className="card-body gap-1">
               <h2 className="text-gray-100 card-title">{item.title}</h2>
               <div className="divider before:bg-rose-600 after:bg-rose-600 my-0.5 h-3"></div>
               <div

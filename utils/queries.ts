@@ -70,14 +70,14 @@ export const GetPostListingByCategory = gql`
 `;
 
 export const GetAllEvents = gql`
-  query GetAllEvents {
-    events {
+  query GetAllEvents($amount: Int) {
+    events(first: $amount) {
       nodes {
         id
         slug
         title
         excerpt
-        date
+        startDate
         venue {
           city
           address
@@ -115,7 +115,7 @@ export const GetEventBySlug = gql`
         city
         address
       }
-      date
+      startDate
       featuredImage {
         node {
           mediaItemUrl
@@ -133,6 +133,23 @@ export const GetAllEventsCalendar = gql`
         title
         startDate
         slug
+      }
+    }
+  }
+`;
+
+export const GetEventsForUpcoming = gql`
+  query GetEventsForUpcoming($amount: Int) {
+    events(first: $amount) {
+      nodes {
+        id
+        slug
+        title
+        startDate
+        venue {
+          city
+          address
+        }
       }
     }
   }

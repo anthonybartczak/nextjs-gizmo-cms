@@ -5,9 +5,10 @@ import { Hero } from "../components/Hero";
 import { Navbar } from "../components/Navbar";
 import { Drawer } from "../components/Drawer";
 import { Footer } from "../components/Footer";
-import { Featured } from "../components/Featured";
+import { FeaturedArtists } from "../components/FeaturedArtists";
 import apolloClient from "../lib/apollo";
-import { GetFeaturedArtistPosts } from "../utils/queries";
+import { GetFeaturedArtistPosts, GetEventsForUpcoming } from "../utils/queries";
+import { UpcomingEvents } from "../components/UpcomingEvents";
 
 const Home: NextPage = ({ posts, events }: any) => {
   return (
@@ -21,7 +22,8 @@ const Home: NextPage = ({ posts, events }: any) => {
           <div className="flex flex-col drawer-content relative overflow-hidden">
             <Navbar />
             <Hero />
-            <Featured posts={posts} />
+            <UpcomingEvents events={events} />
+            <FeaturedArtists posts={posts} />
             <Footer />
           </div>
           <Drawer />
@@ -38,10 +40,16 @@ export async function getStaticProps() {
     query: GetFeaturedArtistPosts,
   });
 
+  const { data: upcomingEvents }: any = await apolloClient.query({
+    query: GetEventsForUpcoming,
+    variables: { amount: 3 },
+  });
+
   const posts = featuredPosts.posts.nodes;
+  const events = upcomingEvents.events.nodes;
 
   return {
-    props: { posts },
+    props: { posts, events },
     revalidate: 30,
   };
 }

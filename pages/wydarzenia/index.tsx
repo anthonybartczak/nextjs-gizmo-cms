@@ -52,11 +52,11 @@ const Events: NextPage = ({ events }: any) => {
                     </div>
                     <div className="flex">
                       <MdOutlineCalendarToday className="mt-1 mr-1" />
-                      <span>{event.date.split("T")[0]}</span>
+                      <span>{event.startDate.split(" ")[0]}</span>
                     </div>
                     <div className="flex">
                       <MdAccessTime className="mt-1 mr-1" />
-                      <span>{event.date.split("T")[1]}</span>
+                      <span>{event.startDate.split(" ")[1]}</span>
                     </div>
                   </div>
                   <div className="card-actions xl:absolute justify-end bottom-8 right-4">
@@ -81,6 +81,7 @@ export default Events;
 export async function getStaticProps() {
   const { data }: any = await apolloClient.query({
     query: GetAllEvents,
+    variables: { amount: 20 },
   });
 
   const events = data.events.nodes;
