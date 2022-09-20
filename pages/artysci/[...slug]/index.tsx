@@ -40,9 +40,7 @@ const ArtistPage = ({ post }: any) => (
                 className=""
               />
             </figure>
-            <div className="mt-4">
-              <SocialLinks post={post} />
-            </div>
+            <SocialLinks post={post} />
             <div className="flex flex-col mt-4 text-gray-800">
               <span>{post.contactFunction}:</span>
               <div className="flex">

@@ -11,10 +11,9 @@ export const UpcomingEvents = ({ events }: any) => (
   <>
     <div className="flex flex-col bg-gray-100">
       <div className="flex py-6 px-8">
-        <div className="divider before:bg-rose-600 after:bg-rose-600 text-black font-bold w-full my-0.5 h-3 md:text-2xl">
+        <div className="divider before:bg-rose-600 after:bg-rose-600 text-black font-bold w-full my-0.5 h-3 text-xl md:text-4xl">
           Nadchodzące wydarzenia
         </div>
-        {/* <MdOutlineCalendarToday className="text-gray-100 text-4xl mt-1" /> */}
       </div>
       <ul className="grid grid-flow-row xl:grid-cols-3">
         {events.map((event: any) => (

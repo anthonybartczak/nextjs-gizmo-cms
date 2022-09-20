@@ -165,7 +165,7 @@ function Contact() {
                 </div>
                 <div className="flex">
                   <MdLocalPhone className="mt-1 mr-1" />
-                  <span>+48 123 456 789</span>
+                  <span>+48 664 720 021</span>
                 </div>
               </div>
             </div>
@@ -173,15 +173,15 @@ function Contact() {
               <div className="flex flex-col text-gray-800 gap-2">
                 <div className="flex">
                   <MdPerson className="mt-1 mr-1" />
-                  <span>Szymon Wiśniewski</span>
+                  <span>Julia Podlewska</span>
                 </div>
                 <div className="flex">
                   <MdEmail className="mt-1 mr-1" />
-                  <span>gizmo@gizmo.com.pl</span>
+                  <span>j.podlewska@gizmo.com.pl</span>
                 </div>
                 <div className="flex">
                   <MdLocalPhone className="mt-1 mr-1" />
-                  <span>+48 123 456 789</span>
+                  <span>+48 608 425 380</span>
                 </div>
               </div>
             </div>

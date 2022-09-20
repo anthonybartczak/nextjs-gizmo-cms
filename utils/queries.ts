@@ -10,10 +10,13 @@ export const GetPostBySlug = gql`
       contactPhone
       contactFunction
       postFacebook
+      postInstagram
       postSpotify
       postYoutube
       postAppleMusic
       postTidal
+      venueAddress
+      venueCity
       featuredImage {
         node {
           mediaItemUrl
@@ -58,6 +61,8 @@ export const GetPostListingByCategory = gql`
         id
         title
         excerpt
+        venueAddress
+        venueCity
         featuredImage {
           node {
             mediaItemUrl

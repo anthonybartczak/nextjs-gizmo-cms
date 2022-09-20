@@ -39,11 +39,13 @@ export const Navbar = () => {
         <div className="flex-none hidden lg:block">
           <ul className="menu menu-horizontal">
             {buttonItems.map((item) => (
-              <li className="" key={item.label}>
-                <Link href={item.href} passHref>
-                  <button className="full-nav-btn">{item.label}</button>
-                </Link>
-              </li>
+              <Link href={item.href} passHref key={item.label}>
+                <a>
+                  <li className="">
+                    <button className="full-nav-btn">{item.label}</button>
+                  </li>
+                </a>
+              </Link>
             ))}
           </ul>
         </div>

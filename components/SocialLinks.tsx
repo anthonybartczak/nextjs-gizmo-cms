@@ -4,6 +4,7 @@ import {
   SiFacebook,
   SiYoutube,
   SiTidal,
+  SiInstagram,
 } from "react-icons/si";
 
 export default function SocialLinks({ post }: any) {
@@ -13,6 +14,15 @@ export default function SocialLinks({ post }: any) {
         {post.postFacebook ? (
           <a href={post.postFacebook} target="_blank" rel="noopener noreferrer">
             <SiFacebook target="_blank" className="detail-social-links" />
+          </a>
+        ) : null}
+        {post.postInstagram ? (
+          <a
+            href={post.postInstagram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiInstagram target="_blank" className="detail-social-links" />
           </a>
         ) : null}
         {post.postSpotify ? (

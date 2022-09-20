@@ -7,6 +7,7 @@ import { Drawer } from "../../components/Drawer";
 import { Footer } from "../../components/Footer";
 import { sanitize } from "../../utils/misc";
 import { GetPostListingByCategory } from "../../utils/queries";
+import { MdLocationCity, MdLocationPin } from "react-icons/md";
 import Link from "next/link";
 
 const Venues: NextPage = ({ posts }: any) => {
@@ -34,6 +35,16 @@ const Venues: NextPage = ({ posts }: any) => {
                 </figure>
                 <div className="card-body gap-0.5">
                   <h2 className="card-title text-black">{post.title}</h2>
+                  <div className="text-gray-600">
+                    <div className="flex">
+                      <MdLocationCity className="mt-1 mr-1" />
+                      <span>{post.venueCity}</span>
+                    </div>
+                    <div className="flex">
+                      <MdLocationPin className="mt-1 mr-1" />
+                      <span>{post.venueAddress}</span>
+                    </div>
+                  </div>
                   <div className="divider before:bg-rose-600 after:bg-rose-600 my-0.5 h-3"></div>
                   <div
                     className="text-gray-600"
@@ -42,7 +53,7 @@ const Venues: NextPage = ({ posts }: any) => {
                     }}
                   />
                   <div className="card-actions xl:absolute justify-end bottom-8 right-4">
-                    <Link href={"/artysci/" + post.slug} passHref>
+                    <Link href={"/lokale/" + post.slug} passHref>
                       <button className="main-card-btn">więcej</button>
                     </Link>
                   </div>

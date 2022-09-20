@@ -9,7 +9,13 @@ import { sanitize } from "../../../utils/misc";
 import { GetAllSlugs, GetPostBySlug } from "../../../utils/queries";
 import styles from "../../post-styles/posts-body.module.css";
 import SocialLinks from "../../../components/SocialLinks";
-import { MdPerson, MdEmail, MdLocalPhone } from "react-icons/md";
+import {
+  MdPerson,
+  MdEmail,
+  MdLocalPhone,
+  MdLocationCity,
+  MdLocationPin,
+} from "react-icons/md";
 
 const ArtistPage = ({ post }: any) => (
   <>
@@ -30,6 +36,16 @@ const ArtistPage = ({ post }: any) => (
                 }}
               />
             </header>
+            <div className="flex mt-1 text-gray-800">
+              <div className="flex mr-4">
+                <MdLocationCity className="mt-1 mr-1" />
+                <span>{post.venueCity}</span>
+              </div>
+              <div className="flex">
+                <MdLocationPin className="mt-1 mr-1" />
+                <span>{post.venueAddress}</span>
+              </div>
+            </div>
             <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>
             <figure className="drop-shadow-xl">
               <Image
@@ -40,10 +56,8 @@ const ArtistPage = ({ post }: any) => (
                 className=""
               />
             </figure>
-            <div className="mt-4">
-              <SocialLinks post={post} />
-            </div>
-            <div className="flex flex-col mt-4 text-gray-800">
+            <SocialLinks post={post} />
+            <div className="flex flex-col mt-4 ">
               <span>{post.contactFunction}:</span>
               <div className="flex">
                 <MdPerson className="mt-1 mr-1" />
@@ -58,6 +72,7 @@ const ArtistPage = ({ post }: any) => (
                 <span>{post.contactPhone}</span>
               </div>
             </div>
+
             <div
               className={styles.content}
               dangerouslySetInnerHTML={{
@@ -93,7 +108,9 @@ export async function getStaticProps(context: { params: { slug: any[] } }) {
     query: GetPostBySlug,
     variables: { slug: context.params.slug.join(" / ") },
   });
+
   const post = data.post;
+
   return {
     props: { post },
     revalidate: 30,
