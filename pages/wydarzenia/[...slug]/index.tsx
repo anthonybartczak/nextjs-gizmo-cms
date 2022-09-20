@@ -65,6 +65,7 @@ const EventPage = ({ event }: any) => (
                 height={720}
                 src={event.featuredImage.node.mediaItemUrl}
                 className=""
+                priority
               />
             </figure>
             <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>

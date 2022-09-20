@@ -54,6 +54,7 @@ const ArtistPage = ({ post }: any) => (
                 height={720}
                 src={post.featuredImage.node.mediaItemUrl}
                 className=""
+                priority
               />
             </figure>
             <SocialLinks post={post} />
