@@ -55,7 +55,7 @@ function Contact() {
           <Navbar />
           <form
             id="contact-form"
-            className="mx-4 mt-4 mb-4 rounded-2xl bg-gray-50 px-8 pt-8 pb-1 shadow-xl md:col-span-8 xl:mx-80"
+            className="mx-4 mt-4 mb-4 bg-gray-50 px-8 pt-8 pb-1 shadow-xl md:col-span-8 xl:mx-80"
           >
             <div className="-mx-3 flex flex-wrap">
               <div className="w-full px-3 md:mb-0 md:w-1/2">
@@ -143,7 +143,7 @@ function Contact() {
                   onClick={(e) => {
                     handleSubmit(e);
                   }}
-                  className="focus:shadow-outline my-2 rounded bg-gray-800
+                  className="focus:shadow-outline my-2 bg-gray-800
                             py-2 px-6 font-bold text-white shadow hover:bg-gray-600 focus:outline-none"
                   type="submit"
                 >
@@ -152,8 +152,8 @@ function Contact() {
               </div>
             </div>
           </form>
-          <div className="flex mb-12 md:gap-4 xl:mx-80 flex-wrap mx-4">
-            <div className="mb-4 rounded-2xl bg-gray-50 px-8 py-8 shadow-xl flex grow">
+          <div className="flex mb-12 md:gap-4 xl:mx-80 mx-4 basis-0 flex-wrap md:flex-nowrap">
+            <div className="mb-4 bg-gray-50 px-8 py-8 shadow-xl flex grow md:w-1/2">
               <div className="flex flex-col text-gray-800 gap-2">
                 <div className="flex">
                   <MdPerson className="mt-1 mr-1" />
@@ -169,7 +169,7 @@ function Contact() {
                 </div>
               </div>
             </div>
-            <div className="mb-4 rounded-2xl bg-gray-50 px-8 py-8 shadow-xl flex grow">
+            <div className="mb-4 bg-gray-50 px-8 py-8 shadow-xl flex grow md:w-1/2">
               <div className="flex flex-col text-gray-800 gap-2">
                 <div className="flex">
                   <MdPerson className="mt-1 mr-1" />
