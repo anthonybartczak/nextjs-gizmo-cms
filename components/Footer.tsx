@@ -1,28 +1,6 @@
 import { FaInstagramSquare, FaFacebookSquare } from "react-icons/fa";
 import Link from "next/link";
-
-const buttonItems = [
-  {
-    label: "O nas",
-    href: "/",
-  },
-  {
-    label: "Artyści",
-    href: "/artysci",
-  },
-  {
-    label: "Lokale",
-    href: "/lokale",
-  },
-  {
-    label: "Wydarzenia",
-    href: "/wydarzenia",
-  },
-  {
-    label: "Kontakt",
-    href: "/kontakt",
-  },
-];
+import { buttonItems } from "../utils/structures";
 
 export const Footer = () => (
   <>

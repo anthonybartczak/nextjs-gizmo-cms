@@ -12,7 +12,7 @@ export const buttonItems = [
     href: "/lokale",
   },
   {
-    label: "Wydarzenia",
+    label: "Eventy",
     href: "/wydarzenia",
   },
   {
