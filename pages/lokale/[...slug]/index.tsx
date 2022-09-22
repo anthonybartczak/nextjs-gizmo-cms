@@ -58,7 +58,7 @@ const ArtistPage = ({ post }: any) => (
               />
             </figure>
             <SocialLinks post={post} />
-            <div className="flex flex-col mt-4 ">
+            <div className="flex flex-col mt-4 text-gray-800">
               <span>{post.contactFunction}:</span>
               <div className="flex">
                 <MdPerson className="mt-1 mr-1" />
@@ -73,7 +73,6 @@ const ArtistPage = ({ post }: any) => (
                 <span>{post.contactPhone}</span>
               </div>
             </div>
-
             <div
               className={styles.content}
               dangerouslySetInnerHTML={{
