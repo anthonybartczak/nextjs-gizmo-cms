@@ -8,14 +8,11 @@ import { Footer } from "../../../components/Footer";
 import { sanitize } from "../../../utils/misc";
 import { GetAllEventSlugs, GetEventBySlug } from "../../../utils/queries";
 import styles from "../../post-styles/posts-body.module.css";
-import SocialLinks from "../../../components/SocialLinks";
 import {
   MdPerson,
   MdEmail,
   MdLocalPhone,
-  MdLocationCity,
   MdLocationPin,
-  MdAccessTime,
   MdOutlineCalendarToday,
 } from "react-icons/md";
 
@@ -38,23 +35,14 @@ const EventPage = ({ event }: any) => (
                 }}
               />
             </header>
-            <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>
-            <div className="grid grid-cols-2 grid-rows-2 text-gray-800">
-              <div className="flex">
-                <MdLocationCity className="mt-1 mr-1" />
-                <span>{event.venue.city}</span>
-              </div>
+            <div className="mt-2 grid grid-cols-1 grid-rows-2 text-gray-800">
               <div className="flex">
                 <MdLocationPin className="mt-1 mr-1" />
-                <span>{event.venue.address}</span>
+                <span>{event.venue.address + ", " + event.venue.city}</span>
               </div>
               <div className="flex">
                 <MdOutlineCalendarToday className="mt-1 mr-1" />
-                <span>{event.startDate.split(" ")[0]}</span>
-              </div>
-              <div className="flex">
-                <MdAccessTime className="mt-1 mr-1" />
-                <span>{event.startDate.split(" ")[1]}</span>
+                <span>{event.startDate}</span>
               </div>
             </div>
             <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>
@@ -68,7 +56,6 @@ const EventPage = ({ event }: any) => (
                 priority
               />
             </figure>
-            <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>
             <div className="flex justify-start gap-4 md:flex-row flex-col">
               <div className="text-gray-800 mt-4">
                 <span>{event.contactFunction}:</span>

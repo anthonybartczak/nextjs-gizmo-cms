@@ -22,12 +22,12 @@ const Events: NextPage = ({ events }: any) => {
       </Head>
       <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="flex flex-col drawer-content">
+        <div className="flex flex-col drawer-content ">
           <Navbar />
           <ul className="pt-4">
             <Link href="/wydarzenia/kalendarz/" passHref>
               <a>
-                <li className="flex flex-row flex-wrap event-listing-card justify-center p-3 hover:bg-rose-600 hover:text-gray-100 ease-linear transition-all duration-150">
+                <li className="flex flex-row flex-wrap event-listing-card justify-center p-3 text-black hover:bg-rose-600 hover:text-gray-100 ease-linear transition-all duration-150">
                   <h1 className="text-2xl">Kalendarz wydarzeń</h1>
                   <MdOutlineCalendarToday className="text-2xl mt-1 ml-2" />
                 </li>

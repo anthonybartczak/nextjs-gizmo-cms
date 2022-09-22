@@ -36,7 +36,7 @@ const ArtistPage = ({ post }: any) => (
                 }}
               />
             </header>
-            <div className="flex mt-1 text-gray-800">
+            <div className="flex mt-2 text-gray-800">
               <div className="flex mr-4">
                 <MdLocationCity className="mt-1 mr-1" />
                 <span>{post.venueCity}</span>

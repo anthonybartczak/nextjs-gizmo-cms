@@ -1,11 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { formatDate } from "../utils/misc";
-import {
-  MdLocationPin,
-  MdAccessTime,
-  MdOutlineCalendarToday,
-} from "react-icons/md";
+import { MdLocationPin, MdAccessTime } from "react-icons/md";
 
 export const UpcomingEvents = ({ events }: any) => (
   <>
