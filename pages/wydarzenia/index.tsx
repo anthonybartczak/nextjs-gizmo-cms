@@ -28,8 +28,8 @@ const Events: NextPage = ({ events }: any) => {
             <Link href="/wydarzenia/kalendarz/" passHref>
               <a>
                 <li className="flex flex-row flex-wrap event-listing-card justify-center p-3 hover:bg-rose-600 hover:text-gray-100 ease-linear transition-all duration-150">
-                  <h1 className="text-4xl">Kalendarz wydarzeń</h1>
-                  <MdOutlineCalendarToday className="text-4xl mt-1 ml-2" />
+                  <h1 className="text-2xl">Kalendarz wydarzeń</h1>
+                  <MdOutlineCalendarToday className="text-2xl mt-1 ml-2" />
                 </li>
               </a>
             </Link>

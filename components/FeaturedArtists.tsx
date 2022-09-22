@@ -4,20 +4,28 @@ import Image from "next/image";
 export const FeaturedArtists = ({ posts }: any) => (
   <>
     <div className="flex flex-col bg-gray-100 items-center">
-      <ul className="featured-section ">
-        <li className="card w-84 min-w-full">
-          <div className="flex flex-col card-body !bg-rose-600 text-4xl text-gray-50">
-            <h1>Nasi</h1>
-            <h1>artyści</h1>
-          </div>
-        </li>
+      <ul className="featured-section">
+        <Link href="/artysci/" passHref>
+          <a className="card w-84 h-80 2xl:h-96 min-w-full">
+            <li>
+              <div className="featured-artist-link">
+                <h1>Nasi</h1>
+                <h1>artyści</h1>
+              </div>
+            </li>
+          </a>
+        </Link>
+
         {posts.map((item: any) => (
-          <li key={item.id} className="card w-84 shadow-xl image-full">
+          <li
+            key={item.id}
+            className="card shadow-xl image-full  h-80 2xl:h-96"
+          >
             <figure className="card-image">
               <Image
                 src={item.featuredImage.node.mediaItemUrl}
-                width={400}
-                height={400}
+                layout="fill"
+                objectFit="cover"
                 alt="Artists thumbnail image"
               />
             </figure>

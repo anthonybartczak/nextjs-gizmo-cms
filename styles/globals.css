@@ -19,9 +19,21 @@ html {
   @apply !rounded-none;
 }
 
+.card-image {
+  @apply relative;
+}
+
 .navbar {
   min-height: 3.5rem;
   max-height: 3.5rem;
+}
+
+.featured-artist-link {
+  @apply flex flex-col card-body
+  h-80 2xl:h-96
+!bg-rose-600 text-4xl text-gray-50
+hover:text-gray-50 hover:!bg-gray-800
+  ease-linear transition-all duration-150;
 }
 
 .artist-listing-card {
@@ -109,7 +121,7 @@ html {
 
 .main-card-btn {
   @apply text-sm
- text-black bg-gray-100 rounded-md hover:bg-rose-600 hover:text-white
+ text-black bg-gray-100 hover:bg-rose-600 hover:text-white
   px-1 py-1
   mr-4
   outline-none focus:outline-none
@@ -119,7 +131,7 @@ html {
 
 .featured-card-btn {
   @apply text-sm
- text-gray-200 bg-gray-800 rounded-md hover:bg-rose-600
+ text-gray-200 bg-gray-800 hover:bg-rose-600
   px-1 py-1
   mr-4
   outline-none focus:outline-none
