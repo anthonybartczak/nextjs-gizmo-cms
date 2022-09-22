@@ -27,30 +27,14 @@ export const Hero = () => (
         </p>
         <div className="flex">
           <Link href="/kontakt" passHref>
-            <button className="main-contact-btn">kontakt</button>
+            <button className="relative p-3 group">
+              <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 group-hover:bg-rose-600 bg-white group-hover:-translate-x-0 group-hover:-translate-y-0" />
+              <span className="absolute inset-0 w-full h-full bg-black border-2 border-white group-hover:bg-black group-hover:border-rose-600" />
+              <span className="relative text-white text-xl uppercase group-hover:text-rose-600">
+                Skontaktuj się z nami!
+              </span>
+            </button>
           </Link>
-          <div className="grid grid-flow-col gap-4">
-            <a
-              href="https://www.instagram.com/agencjagizmo/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagramSquare
-                target="_blank"
-                className="w-10 h-10 hover:text-gray-300 text-gray-200 ease-linear transition-all duration-150"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/agencjagizmo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebookSquare
-                target="_blank"
-                className="w-10 h-10 hover:text-gray-300 text-gray-200 ease-linear transition-all duration-150"
-              />
-            </a>
-          </div>
         </div>
       </div>
     </div>
