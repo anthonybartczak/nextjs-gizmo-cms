@@ -32,7 +32,7 @@ html {
   @apply flex flex-col card-body
   h-80 2xl:h-96
 !bg-rose-600 text-4xl text-gray-50
-hover:text-gray-50 hover:!bg-gray-800
+hover:text-rose-600 hover:!bg-white
   ease-linear transition-all duration-150;
 }
 

@@ -28,9 +28,9 @@ export const Hero = () => (
         <div className="flex">
           <Link href="/kontakt" passHref>
             <button className="relative p-3 group">
-              <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 group-hover:bg-rose-600 bg-white group-hover:-translate-x-0 group-hover:-translate-y-0" />
-              <span className="absolute inset-0 w-full h-full bg-black border-2 border-white group-hover:bg-black group-hover:border-rose-600" />
-              <span className="relative text-white text-xl uppercase group-hover:text-rose-600">
+              <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 group-hover:bg-rose-600 bg-gray-100 group-hover:-translate-x-0 group-hover:-translate-y-0" />
+              <span className="absolute inset-0 w-full h-full bg-black border-2 border-gray-100 group-hover:bg-black group-hover:border-rose-600" />
+              <span className="relative text-gray-100 text-xl uppercase group-hover:text-rose-600">
                 Skontaktuj się z nami!
               </span>
             </button>
