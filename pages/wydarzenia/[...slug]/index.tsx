@@ -19,7 +19,20 @@ import {
 const EventPage = ({ event }: any) => (
   <>
     <Head>
-      <title>{event.title}</title>
+      <title>{event.seo.title}</title>
+      <meta name="description" content={event.seo.metaDesc}></meta>
+      <meta property="og:title" content={event.seo.opengraphTitle} />
+      <meta
+        property="og:description"
+        content={event.seo.opengraphDescription}
+      />
+      <meta property="og:type" content={event.seo.opengraphType} />
+      <meta property="og:url" content={event.seo.opengraphUrl} />
+      <meta property="og:site_name" content={event.seo.opengraphSiteName} />
+      <meta
+        property="og:image"
+        content={event.seo.opengraphImage.mediaItemUrl}
+      />
     </Head>
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />

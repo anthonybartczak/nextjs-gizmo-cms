@@ -22,6 +22,18 @@ export const GetPostBySlug = gql`
           mediaItemUrl
         }
       }
+      seo {
+        title
+        metaDesc
+        opengraphTitle
+        opengraphDescription
+        opengraphSiteName
+        opengraphType
+        opengraphUrl
+        opengraphImage {
+          mediaItemUrl
+        }
+      }
     }
   }
 `;
@@ -123,6 +135,18 @@ export const GetEventBySlug = gql`
       startDate
       featuredImage {
         node {
+          mediaItemUrl
+        }
+      }
+      seo {
+        title
+        metaDesc
+        opengraphTitle
+        opengraphDescription
+        opengraphSiteName
+        opengraphType
+        opengraphUrl
+        opengraphImage {
           mediaItemUrl
         }
       }

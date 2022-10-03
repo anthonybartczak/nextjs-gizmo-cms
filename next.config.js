@@ -19,6 +19,7 @@ const nextConfig = withTM({
     domains: ["assets.example.com", "placeimg.com", "wp.gizmo.com.pl"],
   },
   reactStrictMode: true,
+  swcMinify: true,
 });
 
 module.exports = nextConfig;

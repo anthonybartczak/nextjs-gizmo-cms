@@ -14,7 +14,17 @@ import { MdPerson, MdEmail, MdLocalPhone } from "react-icons/md";
 const ArtistPage = ({ post }: any) => (
   <>
     <Head>
-      <title>{post.title}</title>
+      <title>{post.seo.title}</title>
+      <meta name="description" content={post.seo.metaDesc}></meta>
+      <meta property="og:title" content={post.seo.opengraphTitle} />
+      <meta property="og:description" content={post.seo.opengraphDescription} />
+      <meta property="og:type" content={post.seo.opengraphType} />
+      <meta property="og:url" content={post.seo.opengraphUrl} />
+      <meta property="og:site_name" content={post.seo.opengraphSiteName} />
+      <meta
+        property="og:image"
+        content={post.seo.opengraphImage.mediaItemUrl}
+      />
     </Head>
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />

@@ -14,6 +14,11 @@ const Home: NextPage = ({ posts, events }: any) => {
     <>
       <Head>
         <title>Gizmo Management</title>
+        <meta name="description" content="Agencja Gizmo Management" />
+        <meta property="og:title" content="Agencja Gizmo Management" />
+        <meta property="og:description" content="Agencja Gizmo Management" />
+        <meta property="og:url" content="http://www.gizmo.com.pl/" />
+        <meta property="og:type" content="website" />
       </Head>
       <main>
         <div className="drawer">
