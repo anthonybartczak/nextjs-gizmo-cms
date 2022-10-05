@@ -143,6 +143,7 @@ function Contact() {
                   onClick={(e) => {
                     handleSubmit(e);
                   }}
+                  id="contact-submit"
                   className="focus:shadow-outline my-2 bg-gray-800
                             py-2 px-6 font-bold text-white shadow hover:bg-gray-600 focus:outline-none"
                   type="submit"
