@@ -5,6 +5,7 @@ import {
   SiYoutube,
   SiTidal,
   SiInstagram,
+  SiTiktok,
 } from "react-icons/si";
 
 export default function SocialLinks({ post }: any) {
@@ -25,14 +26,19 @@ export default function SocialLinks({ post }: any) {
             <SiInstagram target="_blank" className="detail-social-links" />
           </a>
         ) : null}
-        {post.postSpotify ? (
-          <a href={post.postSpotify} target="_blank" rel="noopener noreferrer">
-            <SiSpotify target="_blank" className="detail-social-links" />
-          </a>
-        ) : null}
         {post.postYoutube ? (
           <a href={post.postYoutube} target="_blank" rel="noopener noreferrer">
             <SiYoutube target="_blank" className="detail-social-links" />
+          </a>
+        ) : null}
+        {post.postTikTok ? (
+          <a href={post.postTikTok} target="_blank" rel="noopener noreferrer">
+            <SiTiktok target="_blank" className="detail-social-links" />
+          </a>
+        ) : null}
+        {post.postSpotify ? (
+          <a href={post.postSpotify} target="_blank" rel="noopener noreferrer">
+            <SiSpotify target="_blank" className="detail-social-links" />
           </a>
         ) : null}
         {post.postAppleMusic ? (
