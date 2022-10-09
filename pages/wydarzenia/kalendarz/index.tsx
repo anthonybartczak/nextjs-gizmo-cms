@@ -20,6 +20,7 @@ const Calendar: NextPage = ({ events }: any) => {
       <main>
         <div className="drawer">
           <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+          <label htmlFor="my-drawer-3" />
           <div className="flex flex-col drawer-content relative overflow-hidden">
             <Navbar />
             <EventCalendar events={events} />

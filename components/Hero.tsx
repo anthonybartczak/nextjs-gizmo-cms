@@ -8,7 +8,7 @@ export const Hero = () => (
       layout="fill"
       objectFit="cover"
       objectPosition="center"
-      src="/hero-background.webp"
+      src="https://res.cloudinary.com/dkcnvrvbi/image/upload/v1665301274/hero-background_owmmuf.webp"
       priority
     />
     <div className="text-justify hero-content px-4 xl:col-start-2 grid xl:px-16 py-10 md:py-20 2xl:py-40 xl:bg-transparent bg-black bg-opacity-50">

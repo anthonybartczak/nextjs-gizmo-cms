@@ -18,11 +18,12 @@ const Venues: NextPage = ({ posts }: any) => {
       </Head>
       <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+        <label htmlFor="my-drawer-3" />
         <div className="flex flex-col drawer-content">
           <Navbar />
-          <ul className="pt-4">
+          <div className="pt-4">
             {posts.map((post: any) => (
-              <li key={post.id} className="artist-listing-card">
+              <div key={post.id} className="artist-listing-card">
                 <figure>
                   <Image
                     alt=""
@@ -58,9 +59,9 @@ const Venues: NextPage = ({ posts }: any) => {
                     </Link>
                   </div>
                 </div>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
           <Footer />
         </div>
         <Drawer />

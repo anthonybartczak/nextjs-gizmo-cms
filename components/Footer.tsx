@@ -16,6 +16,7 @@ export const Footer = () => (
         <div className="grid grid-flow-col gap-4">
           <a
             href="https://www.instagram.com/agencjagizmo/"
+            aria-label="Instagram page link"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -23,6 +24,7 @@ export const Footer = () => (
           </a>
           <a
             href="https://www.facebook.com/agencjagizmo"
+            aria-label="Facebook page link"
             target="_blank"
             rel="noopener noreferrer"
           >

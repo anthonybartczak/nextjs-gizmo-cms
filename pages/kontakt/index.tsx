@@ -50,6 +50,7 @@ function Contact() {
     <>
       <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+        <label htmlFor="my-drawer-3" />
         <label htmlFor="my-modal-4" className="modal-button" />
         <div className="flex flex-col drawer-content">
           <Navbar />

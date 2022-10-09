@@ -4,20 +4,20 @@ import Image from "next/image";
 export const FeaturedArtists = ({ posts }: any) => (
   <>
     <div className="flex flex-col bg-gray-100 items-center">
-      <ul className="featured-section">
+      <div className="featured-section">
         <Link href="/artysci/" passHref>
           <a className="card w-84 h-80 2xl:h-96 min-w-full">
-            <li>
+            <div>
               <div className="featured-artist-link">
                 <h1>Nasi</h1>
                 <h1>artyści</h1>
               </div>
-            </li>
+            </div>
           </a>
         </Link>
 
         {posts.map((item: any) => (
-          <li
+          <div
             key={item.id}
             className="card shadow-xl image-full  h-80 2xl:h-96"
           >
@@ -44,9 +44,9 @@ export const FeaturedArtists = ({ posts }: any) => (
                 </Link>
               </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   </>
 );

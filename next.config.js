@@ -15,7 +15,7 @@ const nextConfig = withTM({
     return config;
   },
   images: {
-    domains: ["assets.example.com", "placeimg.com", "wp.gizmo.com.pl"],
+    domains: ["assets.example.com", "wp.gizmo.com.pl", "res.cloudinary.com"],
   },
   reactStrictMode: true,
   swcMinify: true,

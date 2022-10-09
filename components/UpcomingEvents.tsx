@@ -11,9 +11,9 @@ export const UpcomingEvents = ({ events }: any) => (
           Nadchodzące wydarzenia
         </div>
       </div>
-      <ul className="grid grid-flow-row xl:grid-cols-3">
+      <div className="grid grid-flow-row xl:grid-cols-3">
         {events.map((event: any) => (
-          <li key={event.id} className="flex bg-gray-50 m-1 card shadow-xl">
+          <div key={event.id} className="flex bg-gray-50 m-1 card shadow-xl">
             <div className="card-body gap-1">
               <span className="text-rose-600 text-8xl">
                 {formatDate(event.startDate)[0]}
@@ -41,9 +41,9 @@ export const UpcomingEvents = ({ events }: any) => (
                 </span>
               </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   </>
 );

@@ -22,19 +22,20 @@ const Events: NextPage = ({ events }: any) => {
       </Head>
       <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+        <label htmlFor="my-drawer-3" />
         <div className="flex flex-col drawer-content ">
           <Navbar />
-          <ul className="pt-4">
+          <div className="pt-4">
             <Link href="/wydarzenia/kalendarz/" passHref>
               <a>
-                <li className="flex flex-row flex-wrap event-listing-card justify-center p-3 text-black hover:bg-rose-600 hover:text-gray-100 ease-linear transition-all duration-150">
+                <div className="flex flex-row flex-wrap event-listing-card justify-center p-3 text-black hover:bg-rose-600 hover:text-gray-100 ease-linear transition-all duration-150">
                   <h1 className="text-2xl">Kalendarz wydarzeń</h1>
                   <MdOutlineCalendarToday className="text-2xl mt-1 ml-2" />
-                </li>
+                </div>
               </a>
             </Link>
             {events.map((event: any) => (
-              <li key={event.id} className="event-listing-card">
+              <div key={event.id} className="event-listing-card">
                 <figure>
                   <Image
                     alt=""
@@ -73,9 +74,9 @@ const Events: NextPage = ({ events }: any) => {
                     </Link>
                   </div>
                 </div>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
           <Footer />
         </div>
         <Drawer />

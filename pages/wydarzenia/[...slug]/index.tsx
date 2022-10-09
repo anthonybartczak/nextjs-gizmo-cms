@@ -36,6 +36,7 @@ const EventPage = ({ event }: any) => (
     </Head>
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+      <label htmlFor="my-drawer-3" />
       <div className="flex flex-col drawer-content">
         <article>
           <Navbar />

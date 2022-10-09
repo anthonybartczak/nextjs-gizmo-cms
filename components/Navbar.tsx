@@ -13,7 +13,7 @@ export const Navbar = () => {
           <a className="mr-auto ml-1">
             <Image
               alt="Navbar logo"
-              width={150}
+              width={160}
               height={50}
               src="/navbar-logo.webp"
             />
@@ -37,17 +37,17 @@ export const Navbar = () => {
           </label>
         </div>
         <div className="flex-none hidden lg:block">
-          <ul className="menu menu-horizontal">
+          <div className="menu menu-horizontal">
             {buttonItems.map((item) => (
               <Link href={item.href} passHref key={item.label}>
                 <a>
-                  <li className="">
-                    <button className="full-nav-btn">{item.label}</button>
-                  </li>
+                  <button type="button" className="full-nav-btn">
+                    {item.label}
+                  </button>
                 </a>
               </Link>
             ))}
-          </ul>
+          </div>
         </div>
       </nav>
     </>
