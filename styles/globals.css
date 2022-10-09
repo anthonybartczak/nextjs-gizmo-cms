@@ -100,9 +100,9 @@ hover:text-rose-600 hover:!bg-white
 }
 
 .full-nav-btn {
-  @apply hover:text-white hover:border hover:translate-x-1 hover:-translate-y-1
-  uppercase text-base text-gray-300 font-bold hover:border-rose-600
-  px-6 h-full
+  @apply hover:text-white hover:translate-x-1 hover:-translate-y-1
+  uppercase text-base text-gray-300 font-bold
+  px-6 h-full hover:bg-rose-600
   outline-none focus:outline-none
   mx-2 py-1.5
   ease-linear transition-all duration-150;
