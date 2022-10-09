@@ -10,7 +10,7 @@ export const Navbar = () => {
         className="navbar bg-black sticky top-0 z-50 justify-center"
       >
         <Link href="/" passHref>
-          <a className="mr-auto ml-1">
+          <a className="mr-auto ml-1 my-1">
             <Image
               alt="Navbar logo"
               width={160}

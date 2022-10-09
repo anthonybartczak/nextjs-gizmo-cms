@@ -7,9 +7,11 @@ export const UpcomingEvents = ({ events }: any) => (
   <>
     <div className="flex flex-col bg-gray-100">
       <div className="flex py-6 px-8">
-        <div className="divider before:bg-rose-600 after:bg-rose-600 text-black font-bold w-full my-0.5 h-3 text-xl md:text-4xl">
-          Nadchodzące wydarzenia
-        </div>
+        <Link href={"/wydarzenia"} passHref>
+          <a className="divider before:bg-rose-600 after:bg-rose-600 text-black font-bold w-full my-0.5 h-3 text-xl md:text-4xl hover:text-rose-600 ease-linear transition-all duration-150;">
+            Nadchodzące wydarzenia
+          </a>
+        </Link>
       </div>
       <div className="grid grid-flow-row xl:grid-cols-3">
         {events.map((event: any) => (

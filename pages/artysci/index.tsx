@@ -33,9 +33,13 @@ const Artists: NextPage = ({ posts }: any) => {
                     className="shadow-xl object-cover"
                   />
                 </figure>
-                <div className="card-body gap-0.5">
-                  <h2 className="card-title text-black">{post.title}</h2>
-                  <div className="divider before:bg-rose-600 after:bg-rose-600 my-0.5 h-3"></div>
+                <div className="card-body">
+                  <Link href={"/artysci/" + post.slug} passHref>
+                    <a>
+                      <h2 className="card-title text-black">{post.title}</h2>
+                    </a>
+                  </Link>
+                  <div className="divider before:bg-rose-600 after:bg-rose-600 h-1"></div>
                   <div
                     className="text-gray-600"
                     dangerouslySetInnerHTML={{

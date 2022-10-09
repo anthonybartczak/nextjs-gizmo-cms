@@ -13,10 +13,18 @@ html {
   scroll-behavior: smooth;
 }
 
+.menu-horizontal {
+  @apply align-middle;
+}
+
 .card,
 .card-body,
 .card.image-full:before {
   @apply !rounded-none;
+}
+
+.card-body {
+  @apply !p-4 gap-1;
 }
 
 .card-image {
@@ -59,7 +67,7 @@ hover:text-rose-600 hover:!bg-white
 
 .detail-social-links {
   @apply w-9 h-9
-  hover:text-gray-500 text-gray-800
+  hover:text-rose-600 text-gray-800
   ease-linear transition-all duration-150;
 }
 
@@ -92,11 +100,11 @@ hover:text-rose-600 hover:!bg-white
 }
 
 .full-nav-btn {
-  @apply hover:text-white hover:border-white
-  uppercase text-base text-gray-300 font-bold focus:bg-rose-600
-  px-6
+  @apply hover:text-white hover:border hover:translate-x-1 hover:-translate-y-1
+  uppercase text-base text-gray-300 font-bold hover:border-rose-600
+  px-6 h-full
   outline-none focus:outline-none
-  mx-2
+  mx-2 py-1.5
   ease-linear transition-all duration-150;
 }
 

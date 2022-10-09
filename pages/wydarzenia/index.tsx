@@ -28,9 +28,9 @@ const Events: NextPage = ({ events }: any) => {
           <div className="pt-4">
             <Link href="/wydarzenia/kalendarz/" passHref>
               <a>
-                <div className="flex flex-row flex-wrap event-listing-card justify-center p-3 text-black hover:bg-rose-600 hover:text-gray-100 ease-linear transition-all duration-150">
-                  <h1 className="text-2xl">Kalendarz wydarzeń</h1>
-                  <MdOutlineCalendarToday className="text-2xl mt-1 ml-2" />
+                <div className="flex flex-row flex-wrap event-listing-card justify-center p-2 bg-gray-100 text-black hover:bg-rose-600 hover:text-gray-100 ease-linear transition-all duration-150">
+                  <h1 className="text-xl uppercase">Kalendarz wydarzeń</h1>
+                  <MdOutlineCalendarToday className="text-2xl mt ml-2" />
                 </div>
               </a>
             </Link>
@@ -47,9 +47,13 @@ const Events: NextPage = ({ events }: any) => {
                     priority
                   />
                 </figure>
-                <div className="card-body gap-0.5">
-                  <h1 className="card-title text-black">{event.title}</h1>
-                  <div className="divider before:bg-rose-600 after:bg-rose-600 my-0.5 h-3"></div>
+                <div className="card-body">
+                  <Link href={"/wydarzenia/" + event.slug} passHref>
+                    <a>
+                      <h1 className="card-title text-black">{event.title}</h1>
+                    </a>
+                  </Link>
+                  <div className="divider before:bg-rose-600 after:bg-rose-600 h-1"></div>
                   <div className="text-gray-600">
                     <div className="flex">
                       <MdLocationCity className="mt-1 mr-1" />
