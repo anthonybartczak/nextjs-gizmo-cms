@@ -44,7 +44,7 @@ const AboutUs: NextPage = ({ post }: any) => {
 
 export default AboutUs;
 
-export async function getStaticProps(context: { params: { slug: any[] } }) {
+export async function getStaticProps() {
   const { data }: any = await apolloClient.query({
     query: GetPostBySlug,
     variables: { slug: "o-nas" },

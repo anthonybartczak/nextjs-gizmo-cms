@@ -38,9 +38,9 @@ export const GetPostBySlug = gql`
   }
 `;
 
-export const GetAllSlugs = gql`
-  query GetAllSlugs {
-    posts {
+export const GetSlugsByCategoryName = gql`
+  query GetSlugsByCategoryNam($categoryName: String) {
+    posts(where: { categoryName: $categoryName }) {
       nodes {
         slug
       }

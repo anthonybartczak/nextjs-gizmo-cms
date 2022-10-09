@@ -6,7 +6,7 @@ import { Navbar } from "../../../components/Navbar";
 import { Drawer } from "../../../components/Drawer";
 import { Footer } from "../../../components/Footer";
 import { sanitize } from "../../../utils/misc";
-import { GetAllSlugs, GetPostBySlug } from "../../../utils/queries";
+import { GetSlugsByCategoryName, GetPostBySlug } from "../../../utils/queries";
 import styles from "../../post-styles/posts-body.module.css";
 import SocialLinks from "../../../components/SocialLinks";
 import { MdPerson, MdEmail, MdLocalPhone } from "react-icons/md";
@@ -87,7 +87,8 @@ export default ArtistPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data }: any = await apolloClient.query({
-    query: GetAllSlugs,
+    query: GetSlugsByCategoryName,
+    variables: { categoryName: "Artyści" },
   });
 
   return {
