@@ -13,8 +13,8 @@ export const Navbar = () => {
           <a className="mr-auto ml-1">
             <Image
               alt="Navbar logo"
-              width={99}
-              height={33}
+              width={150}
+              height={50}
               src="/navbar-logo.webp"
             />
           </a>
