@@ -19,7 +19,7 @@ export const FeaturedArtists = ({ posts }: any) => (
         {posts.map((item: any) => (
           <div
             key={item.id}
-            className="card shadow-xl image-full  h-80 2xl:h-96"
+            className="card shadow-xl image-full h-80 2xl:h-96"
           >
             <figure className="card-image">
               <Image

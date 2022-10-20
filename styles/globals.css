@@ -27,13 +27,17 @@ html {
   @apply !p-4 gap-1;
 }
 
+.card-title {
+  @apply !text-2xl font-normal;
+}
+
 .card-image {
   @apply relative;
 }
 
 .navbar {
-  min-height: 3.5rem;
-  max-height: 3.5rem;
+  min-height: 4rem;
+  max-height: 4rem;
 }
 
 .featured-artist-link {
@@ -82,6 +86,11 @@ hover:text-rose-600 hover:!bg-white
   w-40;
 }
 
+.fc-event-title,
+.fc-col-header-cell-cushion {
+  @apply !font-normal;
+}
+
 .fc-day-today {
   @apply !bg-rose-100;
 }
@@ -101,7 +110,7 @@ hover:text-rose-600 hover:!bg-white
 
 .full-nav-btn {
   @apply hover:text-white hover:translate-x-1 hover:-translate-y-1
-  uppercase text-base text-gray-300 font-bold
+  uppercase text-xl text-gray-300
   px-6 h-full hover:bg-rose-600
   outline-none focus:outline-none
   mx-2 py-1.5
