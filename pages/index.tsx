@@ -8,6 +8,7 @@ import { FeaturedArtists } from "../components/FeaturedArtists";
 import apolloClient from "../lib/apollo";
 import { GetFeaturedArtistPosts, GetEventsForUpcoming } from "../utils/queries";
 import { UpcomingEvents } from "../components/UpcomingEvents";
+import _ from "lodash";
 
 const Home: NextPage = ({ posts, events }: any) => {
   return (
@@ -51,7 +52,11 @@ export async function getStaticProps() {
   });
 
   const posts = featuredPosts.posts.nodes;
-  const events = upcomingEvents.events.nodes;
+  const events = _.orderBy(
+    upcomingEvents.events.nodes,
+    [(obj) => new Date(obj.startDate)],
+    ["desc"]
+  );
 
   return {
     props: { posts, events },

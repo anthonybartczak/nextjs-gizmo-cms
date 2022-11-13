@@ -13,8 +13,12 @@ import {
   MdEmail,
   MdLocalPhone,
   MdLocationPin,
+  MdAccessTime,
   MdOutlineCalendarToday,
 } from "react-icons/md";
+import { HiOutlineTicket } from "react-icons/hi";
+import { formatDate } from "../../../utils/misc";
+import Link from "next/link";
 
 const EventPage = ({ event }: any) => (
   <>
@@ -56,8 +60,24 @@ const EventPage = ({ event }: any) => (
               </div>
               <div className="flex">
                 <MdOutlineCalendarToday className="mt-1 mr-1" />
-                <span>{event.startDate}</span>
+                <span>{event.startDate.split(" ")[0]}</span>
               </div>
+              <div className="flex">
+                <MdAccessTime className="mt-1 mr-1" />
+                <span>
+                  {formatDate(event.startDate)[3] +
+                    ":" +
+                    formatDate(event.startDate)[4]}
+                </span>
+              </div>
+              {event.ticketURL ? (
+                <div className="flex hover:text-rose-600 transition ease-linear">
+                  <HiOutlineTicket className="mt-1 mr-1" />
+                  <Link href={event.ticketURL} passHref>
+                    <a>Kup bilety</a>
+                  </Link>
+                </div>
+              ) : null}
             </div>
             <div className="divider before:bg-rose-600 after:bg-rose-600 my-2 h-3"></div>
             <figure className="drop-shadow-xl">

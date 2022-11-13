@@ -104,6 +104,7 @@ export const GetAllEvents = gql`
             mediaItemUrl
           }
         }
+        ticketURL
       }
     }
   }
@@ -128,6 +129,7 @@ export const GetEventBySlug = gql`
       contactEmail
       contactPhone
       contactFunction
+      ticketURL
       venue {
         city
         address

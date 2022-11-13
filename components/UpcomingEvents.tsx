@@ -24,7 +24,7 @@ export const UpcomingEvents = ({ events }: any) => (
                 {formatDate(event.startDate)[1]}
               </span>
               <Link href={"/wydarzenia/" + event.slug} passHref>
-                <a className="text-gray-800 text-xl font-thin mt-6">
+                <a className="text-gray-800 text-xl font-thin mt-6 hover:text-rose-600 transition ease-linear">
                   {event.title}
                 </a>
               </Link>

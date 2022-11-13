@@ -8,11 +8,13 @@ import { Footer } from "../../components/Footer";
 import { GetAllEvents } from "../../utils/queries";
 import Link from "next/link";
 import {
-  MdLocationCity,
   MdLocationPin,
   MdAccessTime,
   MdOutlineCalendarToday,
 } from "react-icons/md";
+import { HiOutlineTicket } from "react-icons/hi";
+import _ from "lodash";
+import { formatDate } from "../../utils/misc";
 
 const Events: NextPage = ({ events }: any) => {
   return (
@@ -56,12 +58,10 @@ const Events: NextPage = ({ events }: any) => {
                   <div className="divider before:bg-rose-600 after:bg-rose-600 h-1"></div>
                   <div className="text-gray-600">
                     <div className="flex">
-                      <MdLocationCity className="mt-1 mr-1" />
-                      <span>{event.venue.city}</span>
-                    </div>
-                    <div className="flex">
                       <MdLocationPin className="mt-1 mr-1" />
-                      <span>{event.venue.address}</span>
+                      <span>
+                        {event.venue.address + ", " + event.venue.city}
+                      </span>
                     </div>
                     <div className="flex">
                       <MdOutlineCalendarToday className="mt-1 mr-1" />
@@ -69,8 +69,20 @@ const Events: NextPage = ({ events }: any) => {
                     </div>
                     <div className="flex">
                       <MdAccessTime className="mt-1 mr-1" />
-                      <span>{event.startDate.split(" ")[1]}</span>
+                      <span>
+                        {formatDate(event.startDate)[3] +
+                          ":" +
+                          formatDate(event.startDate)[4]}
+                      </span>
                     </div>
+                    {event.ticketURL ? (
+                      <div className="flex hover:text-rose-600 transition ease-linear">
+                        <HiOutlineTicket className="mt-1 mr-1" />
+                        <Link href={event.ticketURL} passHref>
+                          <a>Kup bilety</a>
+                        </Link>
+                      </div>
+                    ) : null}
                   </div>
                   <div className="card-actions xl:absolute justify-end bottom-8 right-4">
                     <Link href={"/wydarzenia/" + event.slug} passHref>
@@ -97,7 +109,11 @@ export async function getStaticProps() {
     variables: { amount: 20 },
   });
 
-  const events = data.events.nodes;
+  const events = _.orderBy(
+    data.events.nodes,
+    [(obj) => new Date(obj.startDate)],
+    ["desc"]
+  );
 
   return {
     props: { events },
