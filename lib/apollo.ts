@@ -186,6 +186,16 @@ const apolloClient = new ApolloClient({
   ssrMode: !isBrowser, // Disables forceFetch on the server (so queries are only run once)
   link: from([tokenGeneration, authMiddleware, httpLink]),
   cache: new InMemoryCache(),
+  defaultOptions: {
+    watchQuery: {
+      fetchPolicy: "no-cache",
+      errorPolicy: "ignore",
+    },
+    query: {
+      fetchPolicy: "no-cache",
+      errorPolicy: "all",
+    },
+  },
 });
 
 export default apolloClient;

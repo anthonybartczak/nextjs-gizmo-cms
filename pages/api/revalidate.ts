@@ -1,47 +1,25 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
-) {
-  const {
-    body: { paths },
-    method,
-  } = req;
+): Promise<void> {
+  const { path, token } = req.query;
 
-  if (
-    req.headers.authorization !== `Bearer ${process.env.REVALIDATE_SECRET_KEY}`
-  ) {
+  if ((token as string) !== process.env.REVALIDATE_SECRET_KEY) {
     return res.status(401).json({ message: "Invalid token" });
+  } else if ((path as string).length === 0) {
+    return res.status(401).json({ message: "Path is required" });
   }
-
-  if (method !== "PUT") {
-    return res.status(405).json({ message: `Method ${method} Not Allowed` });
-  }
-
-  if (!paths) {
-    return res.status(412).json({ message: "No paths" });
-  }
-
-  const correctPaths = paths.filter((path: string) => path.startsWith("/"));
 
   try {
-    const revalidatePaths = correctPaths.map((path: string) =>
-      res.revalidate(path, { unstable_onlyGenerated: false })
-    );
-
-    await Promise.all(revalidatePaths);
-
-    // Logging for debugging purposes only
-    console.log(
-      `${new Date().toJSON()} - Paths revalidated: ${correctPaths.join(", ")}`
-    );
-
-    return res.json({
-      revalidated: true,
-      message: `Paths revalidated: ${correctPaths.join(", ")}`,
-    });
-  } catch (err: any) {
-    return res.status(500).json({ message: err.message });
+    await res.revalidate(path as string);
+  } catch (err) {
+    return res.status(500).send("Error revalidating page");
   }
+
+  return res.status(200).json({
+    revalidated: true,
+    message: `Path ${path} revalidated successfully`,
+  });
 }

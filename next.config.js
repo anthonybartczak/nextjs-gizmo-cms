@@ -8,6 +8,9 @@ const withTM = require("next-transpile-modules")([
 ]);
 
 const nextConfig = withTM({
+  env: {
+    REVALIDATE_SECRET_KEY: process.env.REVALIDATE_SECRET_KEY,
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback.fs = false;
