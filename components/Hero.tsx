@@ -18,11 +18,12 @@ export const Hero = () => (
         </h1>
         <h1 className="text-5xl font-bold text-rose-600">dobrze.</h1>
         <p className="text-gray-200 py-5 max-w-2xl">
-          Fusce sed lacus ut dolor consequat euismod. Quisque non eros mollis,
-          condimentum purus vitae, bibendum quam. In urna leo, facilisis quis
-          ipsum quis, finibus viverra massa. Maecenas mi neque, bibendum non
-          metus fringilla, cursus tincidunt sem. Pellentesque imperdiet enim
-          quis lacus varius, sit amet cursus purus ullamcorper.
+          Agencja Gizmo to firma, która od 2016 r. świadczy usługi m.in. z
+          szeroko pojętego managementu dla artystów i lokali rozrywkowych oraz
+          obsługi technicznej. Od początku działalności zorganizowaliśmy,
+          współorganizowaliśmy lub obsługiwaliśmy kilka tysięcy wydarzeń
+          kulturalno-rozrywkowych, w których łącznie uczestniczyło ponad milion
+          odbiorców.
         </p>
         <div className="flex">
           <Link href="/kontakt" passHref>
