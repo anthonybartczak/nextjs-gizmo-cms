@@ -68,7 +68,12 @@ export const GetFeaturedArtistPosts = gql`
 
 export const GetPostListingByCategory = gql`
   query GetPostListingByCategory($categoryName: String) {
-    posts(where: { categoryName: $categoryName }) {
+    posts(
+      where: {
+        categoryName: $categoryName
+        orderby: { field: TITLE, order: ASC }
+      }
+    ) {
       nodes {
         id
         title

@@ -112,7 +112,7 @@ export async function getStaticProps() {
   const events = _.orderBy(
     data.events.nodes,
     [(obj) => new Date(obj.startDate)],
-    ["desc"]
+    ["asc"]
   );
 
   return {
