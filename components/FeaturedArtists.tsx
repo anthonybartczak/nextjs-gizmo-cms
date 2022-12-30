@@ -23,7 +23,7 @@ export const FeaturedArtists = ({ posts }: any) => (
           >
             <figure className="card-image">
               <Image
-                src={item.featuredImage.node.mediaItemUrl}
+                src={item.featuredImage?.node.mediaItemUrl}
                 layout="fill"
                 objectFit="cover"
                 alt="Artists thumbnail image"

@@ -85,7 +85,7 @@ const EventPage = ({ event }: any) => (
                 alt=""
                 width={1280}
                 height={720}
-                src={event.featuredImage.node.mediaItemUrl}
+                src={event.featuredImage?.node.mediaItemUrl}
                 className=""
                 priority
               />

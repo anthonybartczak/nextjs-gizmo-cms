@@ -47,7 +47,7 @@ const ArtistPage = ({ post }: any) => (
                 alt=""
                 width={1280}
                 height={720}
-                src={post.featuredImage.node.mediaItemUrl}
+                src={post.featuredImage?.node.mediaItemUrl}
                 className=""
                 priority
               />

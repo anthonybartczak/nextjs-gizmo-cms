@@ -29,7 +29,7 @@ const Artists: NextPage = ({ posts }: any) => {
                     layout="fixed"
                     width={450}
                     height={253}
-                    src={post.featuredImage.node.mediaItemUrl}
+                    src={post.featuredImage?.node.mediaItemUrl}
                     className="shadow-xl object-cover"
                   />
                 </figure>

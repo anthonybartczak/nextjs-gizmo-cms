@@ -44,7 +44,7 @@ const Events: NextPage = ({ events }: any) => {
                     layout="fixed"
                     width={450}
                     height={253}
-                    src={event.featuredImage.node.mediaItemUrl}
+                    src={event.featuredImage?.node.mediaItemUrl}
                     className="shadow-xl object-cover"
                     priority
                   />
