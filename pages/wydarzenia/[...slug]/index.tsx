@@ -73,9 +73,13 @@ const EventPage = ({ event }: any) => (
               {event.ticketURL ? (
                 <div className="flex hover:text-rose-600 transition ease-linear">
                   <HiOutlineTicket className="mt-1 mr-1" />
-                  <Link href={event.ticketURL} passHref>
-                    <a>Kup bilety</a>
-                  </Link>
+                  <a
+                    href={event.ticketURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Kup bilety
+                  </a>
                 </div>
               ) : null}
             </div>
@@ -147,6 +151,6 @@ export async function getStaticProps(context: { params: { slug: any[] } }) {
 
   return {
     props: { event },
-    revalidate: 86400,
+    revalidate: 7200,
   };
 }

@@ -107,6 +107,6 @@ export async function getStaticProps(context: { params: { slug: any[] } }) {
   const post = data.post;
   return {
     props: { post },
-    revalidate: 86400,
+    revalidate: 7200,
   };
 }

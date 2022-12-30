@@ -55,11 +55,11 @@ export async function getStaticProps() {
   const events = _.orderBy(
     upcomingEvents.events.nodes,
     [(obj) => new Date(obj.startDate)],
-    ["desc"]
+    ["asc"]
   );
 
   return {
     props: { posts, events },
-    revalidate: 86400,
+    revalidate: 7200,
   };
 }
