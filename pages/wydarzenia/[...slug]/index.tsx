@@ -147,6 +147,6 @@ export async function getStaticProps(context: { params: { slug: any[] } }) {
 
   return {
     props: { event },
-    revalidate: 30,
+    revalidate: 86400,
   };
 }
