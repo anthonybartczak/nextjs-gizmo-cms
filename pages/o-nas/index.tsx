@@ -14,7 +14,22 @@ const AboutUs: NextPage = ({ post }: any) => {
   return (
     <>
       <Head>
-        <title>Gizmo Management</title>
+        <title>Gizmo Management - O nas</title>
+        <meta
+          name="description"
+          content="Agencja Gizmo to firma, która od 2016 r. świadczy usługi m.in. z szeroko pojętego managementu dla artystów (m.in. general management, booking management, tour/road management, PR management itd.) i lokali rozrywkowych (general management, management artystyczny, event management itd.) oraz obsługi technicznej."
+        ></meta>
+        <meta property="og:title" content="Gizmo Management - O nas" />
+        <meta
+          property="og:description"
+          content="Agencja Gizmo to firma, która od 2016 r. świadczy usługi m.in. z szeroko pojętego managementu dla artystów (m.in. general management, booking management, tour/road management, PR management itd.) i lokali rozrywkowych (general management, management artystyczny, event management itd.) oraz obsługi technicznej."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.gizmo.com.pl/o-nas" />
+        <meta
+          property="og:image"
+          content="https://wp.gizmo.com.pl/wp-content/uploads/2022/10/AnyConv.com__O-nas-profi-1.webp"
+        />
       </Head>
       <div className="drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
