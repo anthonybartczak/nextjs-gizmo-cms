@@ -15,11 +15,31 @@ const Home: NextPage = ({ posts, events }: any) => {
     <>
       <Head>
         <title>Gizmo Management</title>
-        <meta name="description" content="Agencja Gizmo Management" />
+        <meta
+          name="description"
+          content="Agencja Gizmo to firma, która od 2016 r. świadczy usługi m.in. z
+          szeroko pojętego managementu dla artystów i lokali rozrywkowych oraz
+          obsługi technicznej. Od początku działalności zorganizowaliśmy,
+          współorganizowaliśmy lub obsługiwaliśmy kilka tysięcy wydarzeń
+          kulturalno-rozrywkowych, w których łącznie uczestniczyło ponad milion
+          odbiorców."
+        />
         <meta property="og:title" content="Agencja Gizmo Management" />
-        <meta property="og:description" content="Agencja Gizmo Management" />
+        <meta
+          property="og:description"
+          content="Agencja Gizmo to firma, która od 2016 r. świadczy usługi m.in. z
+          szeroko pojętego managementu dla artystów i lokali rozrywkowych oraz
+          obsługi technicznej. Od początku działalności zorganizowaliśmy,
+          współorganizowaliśmy lub obsługiwaliśmy kilka tysięcy wydarzeń
+          kulturalno-rozrywkowych, w których łącznie uczestniczyło ponad milion
+          odbiorców."
+        />
         <meta property="og:url" content="http://www.gizmo.com.pl/" />
         <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://wp.gizmo.com.pl/wp-content/uploads/2022/10/AnyConv.com__O-nas-profi-1.webp"
+        />
       </Head>
       <main>
         <div className="drawer">
