@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const Hero = () => (
-  <div className="hero grid xl:grid-cols-2 pb-8 relative">
+  <div className="hero grid xl:grid-cols-2 pb-8 relative ">
     <Image
       alt="Hero background image"
       layout="fill"
@@ -10,14 +10,15 @@ export const Hero = () => (
       objectPosition="center"
       src="https://res.cloudinary.com/dkcnvrvbi/image/upload/v1665301274/hero-background_owmmuf.webp"
       priority
+      className="xl:brightness-100 brightness-50"
     />
-    <div className="text-justify hero-content px-4 xl:col-start-2 grid xl:px-16 py-10 md:py-20 2xl:py-40 xl:bg-transparent bg-black bg-opacity-50">
+    <div className="text-justify hero-content px-4 xl:col-start-2 grid xl:px-16 py-10 md:py-20 2xl:py-40">
       <div className="">
         <h1 className="text-gray-100 text-5xl font-extrabold">
           Management zrobiony
         </h1>
         <h1 className="text-5xl font-bold text-rose-600">dobrze.</h1>
-        <p className="text-gray-200 py-5 max-w-2xl">
+        <p className="text-gray-200 py-5 max-w-2xl text-base md:text-xl 2xl:text-lg">
           Agencja Gizmo to firma, która od 2016 r. świadczy usługi m.in. z
           szeroko pojętego managementu dla artystów i lokali rozrywkowych oraz
           obsługi technicznej. Od początku działalności zorganizowaliśmy,
