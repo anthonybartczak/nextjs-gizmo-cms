@@ -50,7 +50,14 @@ export const GetSlugsByCategoryName = gql`
 
 export const GetFeaturedArtistPosts = gql`
   query GetFeaturedArtistPosts {
-    posts(where: { categoryName: "Artyści", tag: "Promowany" }, first: 3) {
+    posts(
+      where: {
+        categoryName: "Artyści"
+        tag: "Promowany"
+        orderby: { field: MODIFIED, order: DESC }
+      }
+      first: 3
+    ) {
       nodes {
         id
         title

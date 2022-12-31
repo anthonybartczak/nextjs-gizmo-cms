@@ -94,23 +94,6 @@ const EventPage = ({ event }: any) => (
                 priority
               />
             </figure>
-            <div className="flex justify-start gap-4 md:flex-row flex-col">
-              <div className="text-gray-800 mt-4">
-                <span>{event.contactFunction}:</span>
-                <div className="flex">
-                  <MdPerson className="mt-1 mr-1" />
-                  <span>{event.contactName}</span>
-                </div>
-                <div className="flex">
-                  <MdEmail className="mt-1 mr-1" />
-                  <span>{event.contactEmail}</span>
-                </div>
-                <div className="flex">
-                  <MdLocalPhone className="mt-1 mr-1" />
-                  <span>{event.contactPhone}</span>
-                </div>
-              </div>
-            </div>
             <div
               className={styles.content}
               dangerouslySetInnerHTML={{

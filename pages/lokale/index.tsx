@@ -50,9 +50,9 @@ const Venues: NextPage = ({ posts }: any) => {
                       <span>{post.venueAddress}</span>
                     </div>
                   </div>
-                  <div className="divider before:bg-rose-600 after:bg-rose-600 h-1"></div>
+                  <div className="divider before:bg-rose-600 after:bg-rose-600 h-1 !my-1"></div>
                   <div
-                    className="text-gray-600"
+                    className="text-gray-600 max-w-prose"
                     dangerouslySetInnerHTML={{
                       __html: sanitize(post.excerpt ?? {}),
                     }}

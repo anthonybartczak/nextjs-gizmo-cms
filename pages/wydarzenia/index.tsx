@@ -55,7 +55,7 @@ const Events: NextPage = ({ events }: any) => {
                       <h1 className="card-title text-black">{event.title}</h1>
                     </a>
                   </Link>
-                  <div className="divider before:bg-rose-600 after:bg-rose-600 h-1"></div>
+                  <div className="divider before:bg-rose-600 after:bg-rose-600 h-1 !my-1"></div>
                   <div className="text-gray-600">
                     <div className="flex">
                       <MdLocationPin className="mt-1 mr-1" />

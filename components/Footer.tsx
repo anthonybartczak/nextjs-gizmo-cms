@@ -33,7 +33,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className="flex">
-        <p>Copyright © 2022 - </p>
+        <p>Built by</p>
         <a href="https://www.anteriam.live/">Anteriam</a>
       </div>
     </footer>

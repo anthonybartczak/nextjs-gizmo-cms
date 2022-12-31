@@ -1,13 +1,20 @@
 /** @type {import('next').NextConfig} */
-const withTM = require("next-transpile-modules")([
-  "@fullcalendar/common",
-  "@fullcalendar/common",
-  "@fullcalendar/daygrid",
-  "@fullcalendar/timegrid",
-  "@fullcalendar/react",
-]);
+// const withTM = require("next-transpile-modules")([
+//   "@fullcalendar/common",
+//   "@fullcalendar/common",
+//   "@fullcalendar/daygrid",
+//   "@fullcalendar/timegrid",
+//   "@fullcalendar/react",
+// ]);
 
-const nextConfig = withTM({
+const nextConfig = {
+  // transpilePackages: [
+  //   "@fullcalendar/common",
+  //   "@fullcalendar/common",
+  //   "@fullcalendar/daygrid",
+  //   "@fullcalendar/timegrid",
+  //   "@fullcalendar/react",
+  // ],
   env: {
     REVALIDATE_SECRET_KEY: process.env.REVALIDATE_SECRET_KEY,
   },
@@ -22,6 +29,6 @@ const nextConfig = withTM({
   },
   reactStrictMode: true,
   swcMinify: true,
-});
+};
 
 module.exports = nextConfig;
