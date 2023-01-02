@@ -183,7 +183,7 @@ export const GetAllEventsCalendar = gql`
 
 export const GetEventsForUpcoming = gql`
   query GetEventsForUpcoming($amount: Int) {
-    events(first: $amount) {
+    events(last: $amount) {
       nodes {
         id
         slug
