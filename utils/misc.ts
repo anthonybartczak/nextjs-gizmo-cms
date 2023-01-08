@@ -4,20 +4,25 @@ export const sanitize = (content: any) => {
   return process.browser ? DOMPurify.sanitize(content) : content;
 };
 
+export const getCurrentDate = () => {
+  var today = new Date();
+  return [today.getFullYear(), today.getUTCMonth() + 1, today.getUTCDate()];
+};
+
 export const formatDate = (date: any) => {
   const monthNames = [
-    "Styczeń",
-    "Luty",
-    "Marzec",
-    "Kwiecień",
-    "Maj",
-    "Czerwiec",
-    "Lipiec",
-    "Sierpień",
-    "Wrzesień",
-    "Październik",
-    "Listopad",
-    "Grudzień",
+    "Stycznia",
+    "Lutego",
+    "Marca",
+    "Kwietnia",
+    "Maja",
+    "Czerwca",
+    "Lipca",
+    "Sierpnia",
+    "Września",
+    "Października",
+    "Listopada",
+    "Grudnia",
   ];
   const newDate = new Date(date);
   return [

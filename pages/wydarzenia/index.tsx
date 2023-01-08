@@ -14,7 +14,7 @@ import {
 } from "react-icons/md";
 import { HiOutlineTicket } from "react-icons/hi";
 import _ from "lodash";
-import { formatDate } from "../../utils/misc";
+import { formatDate, getCurrentDate } from "../../utils/misc";
 
 const Events: NextPage = ({ events }: any) => {
   return (
@@ -108,9 +108,16 @@ const Events: NextPage = ({ events }: any) => {
 export default Events;
 
 export async function getStaticProps() {
+  const dateArray = getCurrentDate();
+
   const { data }: any = await apolloClient.query({
     query: GetAllEvents,
-    variables: { amount: 20 },
+    variables: {
+      amount: 40,
+      year: dateArray[0],
+      month: dateArray[1],
+      day: dateArray[2],
+    },
   });
 
   const events = _.orderBy(

@@ -9,6 +9,7 @@ import apolloClient from "../lib/apollo";
 import { GetFeaturedArtistPosts, GetEventsForUpcoming } from "../utils/queries";
 import { UpcomingEvents } from "../components/UpcomingEvents";
 import _ from "lodash";
+import { getCurrentDate } from "../utils/misc";
 
 const Home: NextPage = ({ posts, events }: any) => {
   return (
@@ -62,18 +63,25 @@ const Home: NextPage = ({ posts, events }: any) => {
 export default Home;
 
 export async function getStaticProps() {
+  const dateArray = getCurrentDate();
+
   const { data: featuredPosts }: any = await apolloClient.query({
     query: GetFeaturedArtistPosts,
   });
 
   const { data: upcomingEvents }: any = await apolloClient.query({
     query: GetEventsForUpcoming,
-    variables: { amount: 3 },
+    variables: {
+      amount: 3,
+      year: dateArray[0],
+      month: dateArray[1],
+      day: dateArray[2],
+    },
   });
 
   const posts = featuredPosts.posts.nodes;
   const events = _.orderBy(
-    upcomingEvents.events.nodes,
+    upcomingEvents?.events.nodes,
     [(obj) => new Date(obj.startDate)],
     ["asc"]
   );

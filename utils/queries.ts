@@ -99,8 +99,13 @@ export const GetPostListingByCategory = gql`
 `;
 
 export const GetAllEvents = gql`
-  query GetAllEvents($amount: Int) {
-    events(first: $amount) {
+  query GetAllEvents($amount: Int, $day: Int, $month: Int, $year: Int) {
+    events(
+      first: $amount
+      where: {
+        startDateQuery: { after: { day: $day, month: $month, year: $year } }
+      }
+    ) {
       nodes {
         id
         slug
@@ -182,8 +187,13 @@ export const GetAllEventsCalendar = gql`
 `;
 
 export const GetEventsForUpcoming = gql`
-  query GetEventsForUpcoming($amount: Int) {
-    events(last: $amount) {
+  query GetEventsForUpcoming($amount: Int, $day: Int, $month: Int, $year: Int) {
+    events(
+      last: $amount
+      where: {
+        startDateQuery: { after: { day: $day, month: $month, year: $year } }
+      }
+    ) {
       nodes {
         id
         slug
