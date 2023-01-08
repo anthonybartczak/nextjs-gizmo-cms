@@ -62,6 +62,11 @@ hover:text-rose-600 hover:!bg-white
   bg-gray-50;
 }
 
+.event-listing-buttons {
+  @apply justify-center bg-gray-50 text-black hover:bg-rose-600 hover:text-gray-100 shadow-xl
+  ease-linear transition-all duration-150 p-4;
+}
+
 .featured-section {
   @apply grid grid-flow-row xl:grid-cols-4
   justify-items-center

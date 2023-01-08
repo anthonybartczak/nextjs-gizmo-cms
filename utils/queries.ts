@@ -203,3 +203,24 @@ export const GetEventsForUpcoming = gql`
     }
   }
 `;
+
+export const GetEventsForArchive = gql`
+  query GetAllEvents($day: Int, $month: Int, $year: Int) {
+    events(
+      where: {
+        startDateQuery: { before: { day: $day, month: $month, year: $year } }
+      }
+    ) {
+      nodes {
+        id
+        slug
+        title
+        startDate
+        venue {
+          city
+          address
+        }
+      }
+    }
+  }
+`;

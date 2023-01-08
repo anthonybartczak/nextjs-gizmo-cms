@@ -12,6 +12,7 @@ import {
   MdAccessTime,
   MdOutlineCalendarToday,
 } from "react-icons/md";
+import { IoCalendarNumberSharp, IoArchiveSharp } from "react-icons/io5";
 import { HiOutlineTicket } from "react-icons/hi";
 import _ from "lodash";
 import { formatDate, getCurrentDate } from "../../utils/misc";
@@ -27,15 +28,29 @@ const Events: NextPage = ({ events }: any) => {
         <label htmlFor="my-drawer-3" />
         <div className="flex flex-col drawer-content ">
           <Navbar />
-          <div className="pt-4">
-            <Link href="/wydarzenia/kalendarz/" passHref>
-              <a>
-                <div className="flex flex-row flex-wrap event-listing-card justify-center p-2 bg-gray-100 text-black hover:bg-rose-600 hover:text-gray-100 ease-linear transition-all duration-150">
-                  <h1 className="text-xl uppercase">Kalendarz wydarzeń</h1>
-                  <MdOutlineCalendarToday className="text-2xl mt ml-2" />
-                </div>
-              </a>
-            </Link>
+          <div className="pt-6">
+            <div className="flex flex-row mb-8 mx-2 xl:mx-48 2xl:mx-96 gap-2 justify-center md:justify-start">
+              <Link href="/wydarzenia/kalendarz/" passHref>
+                <a>
+                  <div className="event-listing-buttons">
+                    <div className="flex flex-row flex-wrap">
+                      <h1 className="text-xl">Kalendarz</h1>
+                      <IoCalendarNumberSharp className="text-2xl mt ml-2" />
+                    </div>
+                  </div>
+                </a>
+              </Link>
+              <Link href="/wydarzenia/archiwum/" passHref>
+                <a>
+                  <div className="event-listing-buttons">
+                    <div className="flex flex-row flex-wrap">
+                      <h1 className="text-xl">Archiwum</h1>
+                      <IoArchiveSharp className="text-2xl mt ml-2" />
+                    </div>
+                  </div>
+                </a>
+              </Link>
+            </div>
             {events.map((event: any) => (
               <div key={event.id} className="event-listing-card">
                 <figure>
