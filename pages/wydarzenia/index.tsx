@@ -116,7 +116,7 @@ export async function getStaticProps() {
       amount: 40,
       year: dateArray[0],
       month: dateArray[1],
-      day: dateArray[2],
+      day: dateArray[2] - 1,
     },
   });
 
