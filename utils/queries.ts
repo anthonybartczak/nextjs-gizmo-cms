@@ -142,10 +142,6 @@ export const GetEventBySlug = gql`
     event(id: $slug, idType: SLUG) {
       title
       content
-      contactName
-      contactEmail
-      contactPhone
-      contactFunction
       ticketURL
       venue {
         city
