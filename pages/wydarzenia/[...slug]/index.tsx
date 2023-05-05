@@ -114,7 +114,14 @@ export default EventPage;
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data }: any = await apolloClient.query({
     query: GetAllEventSlugs,
+    variables: {
+      amount: 1000,
+    },
   });
+
+  data.events.nodes.map(({ slug }: any) => {
+    console.log(slug.split("/"))
+  })
 
   return {
     paths: data.events.nodes.map(({ slug }: any) => ({

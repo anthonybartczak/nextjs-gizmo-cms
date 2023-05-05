@@ -128,8 +128,10 @@ export const GetAllEvents = gql`
 `;
 
 export const GetAllEventSlugs = gql`
-  query GetAllEventSlugs {
-    events {
+  query GetAllEventSlugs($amount: Int) {
+    events (
+      first: $amount
+    ){
       nodes {
         slug
       }
