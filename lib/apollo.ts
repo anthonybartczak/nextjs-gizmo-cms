@@ -54,24 +54,24 @@ const fetchHeaderWithToken = async (headers = {}) => {
 };
 
 const customFetch = async (
-  uri: RequestInfo,
-  options: RequestInit
+  uri: RequestInfo | URL,
+  options?: RequestInit // Make `options` optional
 ): Promise<Response> => {
-  //console.log("customFetch() ", tokenCache, tokenExpiryCache);
   const ex =
     typeof localStorage !== "undefined"
       ? localStorage.getItem("ex")
       : tokenExpiryCache;
+
   if (ex) {
     const expiration = Number(ex) * 1000;
     const now = Date.now();
     if (now > expiration) {
       const headerWithNewToken = await fetchHeaderWithToken();
       return fetch(uri, {
-        ...options,
+        ...options, // options could be undefined here
         credentials: "include",
         headers: {
-          ...options.headers,
+          ...options?.headers, // Use `?.` to handle undefined options
           ...headerWithNewToken.headers,
         },
       });
@@ -82,15 +82,12 @@ const customFetch = async (
   return initialRequest
     .then((response) => response.json())
     .then(async (json) => {
-      //console.log("json ", json, options, uri);
       if (
         json &&
         json.errors &&
         json.errors.length > 0 &&
         json.errors[0].message === "Internal server error"
       ) {
-        //console.log("Trying to refresh token ", json);
-        // time to refresh token. Error is internal server error
         return fetch("https://wp.gizmo.com.pl/graphql", {
           method: "POST",
           cache: "no-cache",
@@ -114,17 +111,15 @@ const customFetch = async (
               data: { authToken },
               errors = [],
             } = j;
-            //console.log("reAuth j with errros: ", errors);
             if (
               errors.length > 0 &&
               errors[0].message === "The provided refresh token is invalid"
             ) {
-              //console.log("invalid token, need new");
               const headerWithNewToken = await fetchHeaderWithToken();
               return fetch(uri, {
                 ...options,
                 headers: {
-                  ...options.headers,
+                  ...options?.headers, // Use `?.` to handle undefined options
                   ...headerWithNewToken.headers,
                 },
               });
@@ -134,7 +129,7 @@ const customFetch = async (
             const optionsWithRefreshedToken = {
               ...options,
               headers: {
-                ...options.headers,
+                ...options?.headers, // Use `?.` to handle undefined options
                 authorization: `Bearer ${authToken}`,
               },
             };
