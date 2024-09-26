@@ -39,8 +39,8 @@ export const GetPostBySlug = gql`
 `;
 
 export const GetSlugsByCategoryName = gql`
-  query GetSlugsByCategoryNam($categoryName: String) {
-    posts(where: { categoryName: $categoryName }) {
+  query GetSlugsByCategoryName($categoryName: String) {
+    posts(first: 1000, where: { categoryName: $categoryName }) {
       nodes {
         slug
       }
@@ -76,6 +76,7 @@ export const GetFeaturedArtistPosts = gql`
 export const GetPostListingByCategory = gql`
   query GetPostListingByCategory($categoryName: String) {
     posts(
+      first: 1000
       where: {
         categoryName: $categoryName
         orderby: { field: TITLE, order: ASC }
@@ -129,9 +130,7 @@ export const GetAllEvents = gql`
 
 export const GetAllEventSlugs = gql`
   query GetAllEventSlugs($amount: Int) {
-    events (
-      first: $amount
-    ){
+    events(first: $amount) {
       nodes {
         slug
       }
